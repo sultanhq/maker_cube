@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['localhost','192.168.48.138']
 # Application definition
 
 INSTALLED_APPS = [
+    'cube.apps.CubeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
