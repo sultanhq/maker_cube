@@ -25,12 +25,13 @@ SECRET_KEY = '=dsv97mo9=@g^k)lgbmu4vdbkkt$mr9oz_3v+--42*m(7rs0e_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','192.168.48.138']
+ALLOWED_HOSTS = ['localhost','192.168.48.112']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.sites',
     'cube.apps.CubeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -68,8 +70,15 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'maker_cube_app.wsgi.application'
 
+CHANNEL_LAYERS = {
+    "default": {
+    "BACKEND": "asgiref.inmemory.ChannelLayer",
+    "ROUTING": "cube.routing.channel_routing",
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
