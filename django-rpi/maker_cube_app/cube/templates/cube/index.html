@@ -45,10 +45,10 @@ div {float: left; color: red;}
 <script>
   var socket = new WebSocket("ws://" + window.location.host + "/chat/");
   socket.onmessage = function(e) {
-    if (e.data.substring(7) === 'pics'){
+    if (e.data === 'pics'){
       changeDiv();
     } else {
-      document.getElementById("1-4").innerHTML = "<p>" + e.data.substring(7) + "</p>";
+      document.getElementById("1-4").innerHTML = "<p>" + e.data+ "</p>";
     }
   }
 
