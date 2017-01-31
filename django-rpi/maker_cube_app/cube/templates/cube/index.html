@@ -61,9 +61,15 @@ div {float: left; color: red;}
   }
 
   window.onload = function(){
-    document.getElementById('start_text').addEventListener('click', function(clickEvent){
+    document.getElementById('remove_text').addEventListener('click', function(clickEvent){
       socket.send('pics');
     });
+
+    document.getElementById('run_text_submit').addEventListener('click', function(clickEvent){
+      clickEvent.preventDefault();
+      socket.send(document.getElementById('run_text').value);
+      document.getElementById('run_text').value = '';
+    })
   }
 </script>
 </head>
@@ -91,7 +97,13 @@ div {float: left; color: red;}
 <br>
 <br>
 <br>
-<button id="start_text" type="button">Click me!</button>
+<form action='' method='get'>
+  <input id='run_text' type='text'></input>
+  <input id='run_text_submit' type='submit'/>
+  <!-- <input id='run_text_submit' type='submit' style='display: none;'/> -->
+</form>
+<button id="remove_text" type="button">Reset</button>
 
-</body></body>
+</body>
+</body>
 </html>
