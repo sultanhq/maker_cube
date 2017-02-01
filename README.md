@@ -2,21 +2,41 @@
 [![Stories in Ready](https://badge.waffle.io/sultanhq/maker_cube.svg?label=ready&title=Ready)](http://waffle.io/sultanhq/maker_cube)
 
 
+
 # The Maker Cube:
 
-A project inspired by the infortainment displays seen all over the world.
 
-## 60 second statement
+## The Makers Cube is an art project to create a 6 sided LED cube which is a *interactive*, *decorative* and *customisable*.
+
+#### The Makers Cube will provider users with:
+
+#### - A beautiful object
+#### - Fun and interesting interactions and games
+#### - An intuitive experience
 
 
-A 6 sided LED cube, which is a interactive, decorative and customisable
+
+# View the video for the Makers Cube
+
+[Makers Cube Video](Add video link here - use a link to the computer)
 
 
-## Product:
+
+# Features
+
+
+
+
+
+
+# Product
 
 an interactive 6 sided battery powered LED cube
+Powered by a raspberry pi miniature computer
+Built on the Django web framework
+Languages and technologies used: Python, HTML, CSS, JavaScript, Linux, Django channels (websockets)
 
-powered by a raspberry pi miniature computer
+
 
 ## Features:
 
