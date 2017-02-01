@@ -1,112 +1,72 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-<head>
-<title>CUBE</title>
-<style>
+  <head>
+    <title>CUBE</title>
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Orbitron|Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href='{% static "cube/css/index.css" %}'></style>
+    <script src='{% static "cube/js/indexSockets.js"%}'></script>
+    <script src='{% static "cube/js/index.js"%}'></script>
+    <script src='{% static "cube/js/reactionViews.js"%}'></script>
+  </head>
+  <div id="web">
+    <body bgcolor="black">
+      <br>
+      <br>
+      <br>
+      <div><body style="margin: 4px 0px 0px 0px;">
+         <div id="top"><img src="http://i.imgur.com/pTfRIhp.gif" height="32px," width="32px" border="0"></div><!--
+      --><div class= "marquee" id="1-4"><p>{{ip}}:8080</p></div><!--
+      --><div id="bottom"><img src="http://i.imgur.com/Fa5U3cB.gif" height="32px," width="32px" border="0"></div>
+
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <form action='' method='get'>
+        <input id='run_text' type='text'></input>
+        <input id='run_text_submit' type='submit'/>
+        <!-- <input id='run_text_submit' type='submit' style='display: none;'/> -->
+      </form>
+      <button id="remove_text" type="button">Reset</button>
+      <button id="reaction-button" type="button">Reaction Game</button>
+    </body>
+  </div>
 
 
 
-div {float: left; color: red;}
-#1-4 {vertical-align: middle;}
+    <div id="mobile">
+      <div><body>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0, , maximum-scale=1">
+         <h1>"title">THE CUBE</h1>
+         <div id="top"><img src="http://i.imgur.com/pTfRIhp.gif" height="32px," width="32px" border="0"></div><!--
+      --><div class= "marquee" id="1-4"><p>{{ip}}:8080</p></div><!--
+      --><div id="bottom"><img src="http://i.imgur.com/Fa5U3cB.gif" height="32px," width="32px" border="0"></div>
 
-.marquee p {
-  z-index: -10;
-  position: relative;
-  font-family: Tahoma, Arial, sans-serif;
-  width: 128px;
-  height: 100%;
-  margin: 0;
-  white-space: nowrap;
-  line-height: 32px;
-  font-size: 20px;
-  text-align: center;
-  vertical-align: centre;
-  color: #fff;
-  text-shadow: 1px 1px 0px #000000;
-  filter: dropshadow(color=#000000, offx=1, offy=1);
-}
-
-.marquee p {
-  transform:translateX(200%);
-}
-
-@keyframes left-one {
-  0%  {
-    transform:translateX(100%);
-  }
-  100%{
-    transform:translateX(-200%);
-  }
-}
-
-.marquee p:nth-child(1) {
-  animation: left-one 7s linear infinite;
-}
-
-</style>
-<script>
-
-
-  var socket = new WebSocket("ws://" + window.location.host + "/chat/");
-  socket.onmessage = function(e) {
-    if (e.data.substring(7) === 'pics'){
-      changeDiv();
-    } else {
-      document.getElementById("1-4").innerHTML = "<p>" + e.data.substring(7) + "</p>";
-    }
-  }
-
-  function changeDiv() {
-    var pics = "<div id='1'><img src='http://i.imgur.com/GAYQSPf.gif' height='32px,' width='32px' border='0'></div><!--" +
-    "--><div id='2'><img src='http://i.imgur.com/RATkdcZ.gif' height='32px,' width='32px' border='0'></div><!--" +
-    "--><div id='3'><img src='http://i.imgur.com/JjgXIhR.gif' height='32px,' width='32px' border='0'></div><!--" +
-    "--><div id='4'><img src='http://i.imgur.com/Fa5U3cB.gif' height='32px,' width='32px' border='0'></div><!--";
-    document.getElementById("1-4").innerHTML = pics;
-  }
-
-  window.onload = function(){
-    if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
-      document.getElementById('top').innerHTML = "Hello world";
-    }
-    
-    document.getElementById('remove_text').addEventListener('click', function(clickEvent){
-      socket.send('pics');
-    });
-
-    document.getElementById('run_text_submit').addEventListener('click', function(clickEvent){
-      clickEvent.preventDefault();
-      socket.send(document.getElementById('run_text').value);
-      document.getElementById('run_text').value = '';
-    })
-  }
-</script>
-</head>
-<body bgcolor="black">
-<br>
-<br>
-<br>
-<div><body style="margin: 4px 0px 0px 0px;">
-   <div id="top"><img src="http://i.imgur.com/pTfRIhp.gif" height="32px," width="32px" border="0"></div><!--
---><div class= "marquee" id="1-4"><p>{{ip}}:8080</p></div><!--
---><div id="bottom"><img src="http://i.imgur.com/Fa5U3cB.gif" height="32px," width="32px" border="0"></div>
-
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<form action='' method='get'>
-  <input id='run_text' type='text'></input>
-  <input id='run_text_submit' type='submit'/>
-  <!-- <input id='run_text_submit' type='submit' style='display: none;'/> -->
-</form>
-<button id="remove_text" type="button">Reset</button>
-
-</body>
-</body>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <form action='' method='get'>
+            <input id='run_text' type='text'></input>
+            <input id='run_text_submit' type='submit'/>
+            <!-- <input id='run_text_submit' type='submit' style='display: none;'/> -->
+          </form>
+          <button id="remove_text" type="button">Reset</button>
+          <button id="reaction-button" type="button">Reaction Game</button>
+        </div>
+      </body>
+    </body>
 </html>

@@ -1,6 +1,12 @@
 div {float: left; color: red;}
 #1-4 {vertical-align: middle;}
 
+/*font-family: 'Quicksand', sans-serif;
+font-family: 'Orbitron', sans-serif;
+font-family: 'Audiowide', cursive;*/
+
+h1 {font-family: 'Orbitron', sans-serif; }
+
 .marquee p {
   z-index: -10;
   position: relative;

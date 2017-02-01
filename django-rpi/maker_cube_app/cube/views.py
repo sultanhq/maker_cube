@@ -9,4 +9,5 @@ def index(request):
     return render(request, 'cube/index.html', ip)
 
 def mobile(request):
-    return render(request, 'cube/mobile_index.html')
+    ip = {"ip": current_address(),}
+    return render(request, 'cube/mobile_index.html', ip)
