@@ -52,13 +52,6 @@ div {float: left; color: red;}
     }
   }
 
-  function changeDiv() {
-    var pics = "<div id='1'><img src='http://i.imgur.com/GAYQSPf.gif' height='32px,' width='32px' border='0'></div><!--" +
-    "--><div id='2'><img src='http://i.imgur.com/RATkdcZ.gif' height='32px,' width='32px' border='0'></div><!--" +
-    "--><div id='3'><img src='http://i.imgur.com/JjgXIhR.gif' height='32px,' width='32px' border='0'></div><!--" +
-    "--><div id='4'><img src='http://i.imgur.com/Fa5U3cB.gif' height='32px,' width='32px' border='0'></div><!--";
-    document.getElementById("1-4").innerHTML = pics;
-  }
 
   window.onload = function(){
     document.getElementById('remove_text').addEventListener('click', function(clickEvent){
@@ -69,7 +62,56 @@ div {float: left; color: red;}
       clickEvent.preventDefault();
       socket.send(document.getElementById('run_text').value);
       document.getElementById('run_text').value = '';
-    })
+    });
+
+    document.getElementById('reaction-button').addEventListener('click', function(e){
+      addDivs();
+      addSizes();
+      addCircles();
+      var time = 1000 + Math.random() * 4000;
+      setTimeout(function(){  greenCircles() }, time);
+    });
+  }
+
+  var changeDiv = function() {
+    var pics = "<div id='1'><img src='http://i.imgur.com/GAYQSPf.gif' height='32px,' width='32px' border='0'></div><!--" +
+    "--><div id='2'><img src='http://i.imgur.com/RATkdcZ.gif' height='32px,' width='32px' border='0'></div><!--" +
+    "--><div id='3'><img src='http://i.imgur.com/JjgXIhR.gif' height='32px,' width='32px' border='0'></div><!--" +
+    "--><div id='4'><img src='http://i.imgur.com/Fa5U3cB.gif' height='32px,' width='32px' border='0'></div><!--";
+    document.getElementById("1-4").innerHTML = pics;
+  }
+
+  var addDivs = function(){
+    var divs = "<div id='4'>4</div><div id='3'>3</div><div id='2'>2</div><div id='1'>1</div>"
+    document.getElementById('1-4').innerHTML = divs;
+  }
+  var addSizes = function(){
+    var piPanelStyle = 'width: 32px; height: 32px; text-align: center; vertical-align: middle; line-height: 32px;';
+    var panelIDs = ['top', '1', '2', '3', '4', 'bottom'];
+    for (var i = 0; i < panelIDs.length; i++){
+      document.getElementById(panelIDs[i]).setAttribute('style', piPanelStyle);
+    }
+  }
+  var addCircles = function(){
+    var circle = "\u25cb";
+    var color = 'color: red; font-size: 48px; font-weight: bold;';
+    var panelIDs = ['1', '2', '3', '4'];
+    for (var i = 0; i < panelIDs.length; i++){
+      var element = document.getElementById(panelIDs[i]);
+      var elementStyle = element.getAttribute('style');
+      element.setAttribute('style', elementStyle + color);
+      document.getElementById(panelIDs[i]).innerHTML = circle;
+    }
+  }
+
+  var greenCircles = function(){
+    var green = 'color: limegreen;';
+    var panelIDs = ['1', '2', '3', '4'];
+    for (var i = 0; i < panelIDs.length; i++){
+      var element = document.getElementById(panelIDs[i]);
+      var elementStyle = element.getAttribute('style');
+      element.setAttribute('style', elementStyle + green);
+    }
   }
 </script>
 </head>
@@ -98,6 +140,7 @@ div {float: left; color: red;}
   <!-- <input id='run_text_submit' type='submit' style='display: none;'/> -->
 </form>
 <button id="remove_text" type="button">Reset</button>
+<button id="reaction-button" type="button">Reaction Game</button>
 
 </body>
 </body>
