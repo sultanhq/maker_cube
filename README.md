@@ -1,18 +1,23 @@
 
 [![Stories in Ready](https://badge.waffle.io/sultanhq/maker_cube.svg?label=ready&title=Ready)](http://waffle.io/sultanhq/maker_cube)
 
+___
 
 # The Maker Cube:
 
-A project inspired by the infortainment displays seen all over the world.
+<h4> 
+The Makers Cube is an art project to create a 6 sided LED cube, which is a interactive, decorative and customisable.
 
-## 60 second statement
+The Makers Cube will provider users with:
 
-
-A 6 sided LED cube, which is a interactive, decorative and customisable
-
+A beautiful object
+An intuitive interactive experience
+Interesting and fun interactions and games
+</h4>
 
 ## Product:
+
+
 
 an interactive 6 sided battery powered LED cube
 
