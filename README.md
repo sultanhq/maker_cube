@@ -10,9 +10,9 @@ ___
 
 ### The Makers Cube will provider users with:
 
-* A beautiful object
-* Fun and interesting interactions and games
-* An intuitive experience
+### * A beautiful object
+### * Fun and interesting interactions and games
+### * An intuitive experience
 
 
 ## Product:
