@@ -22,13 +22,6 @@
 
 
 
-# Features
-
-
-
-
-
-
 # Product
 
 an interactive 6 sided battery powered LED cube
@@ -80,3 +73,18 @@ Languages and technologies used: Python, HTML, CSS, JavaScript, Linux, Django ch
 * Lithium Battery
 * IMU
 * Speaker
+
+
+# Technical notes
+
+This git repository has two submodules. These are basically separate git repositories nested within this git repository.
+
+The sub modules are repositories that contain drivers for the LED screens. These can be used in a number of projects and should kept up to date.
+
+To clone all of the nested repos run the following form the command line:
+
+`$git clone --recursive https://github.com/sultanhq/maker_cube.git`
+
+If there has been a change to the sub modules you can pull all the updated modules using:
+
+`$git submodule update --recursive`
