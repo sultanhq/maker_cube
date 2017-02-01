@@ -1,4 +1,11 @@
 window.onload = function(){
+
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+    document.getElementById("web").innerHTML = "";
+  } else {
+    document.getElementById("mobile").innerHTML = "";
+    }
+
   document.getElementById('remove_text').addEventListener('click', function(clickEvent){
     socket.send('\\pics');
   });
@@ -13,4 +20,4 @@ window.onload = function(){
     var time = 1000 + Math.random() * 4000;
     socket.send('\\react ' + time);
   });
-}
+};
