@@ -7,3 +7,6 @@ def index(request):
     # return HttpResponse("HELLO WORLD")
     ip = {"ip": current_address(),}
     return render(request, 'cube/index.html', ip)
+
+def mobile(request):
+    return render(request, 'cube/mobile_index.html')
