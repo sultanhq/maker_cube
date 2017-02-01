@@ -12,7 +12,7 @@ from channels import Group
 
 def ws_message(message):
     Group("chat").send({
-        "text": "[user] %s" % message.content['text'],
+        "text": message.content['text'],
     })
 
 # Connected to websocket.connect

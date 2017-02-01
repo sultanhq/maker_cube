@@ -6,7 +6,8 @@
     <link rel="stylesheet" href='{% static "cube/css/index.css" %}'></style>
     <script src='{% static "cube/js/indexSockets.js"%}'></script>
     <script src='{% static "cube/js/index.js"%}'></script>
-    <script src='{% static "cube/js/reactionViews.js"%}'></script>
+    <script src='{% static "cube/js/indexViews.js"%}'></script>
+    <script src='{% static "cube/js/reactionLogic.js"%}'></script>
   </head>
   <body bgcolor="black">
     <br>
@@ -22,7 +23,7 @@
     <br>
     <br>
     <br>
-    <br>
+    <br><button id='react-button' style='display: none;'>REACT</button>
     <br>
     <br>
     <br>
@@ -30,7 +31,6 @@
     <form action='' method='get'>
       <input id='run_text' type='text'></input>
       <input id='run_text_submit' type='submit'/>
-      <!-- <input id='run_text_submit' type='submit' style='display: none;'/> -->
     </form>
     <button id="remove_text" type="button">Reset</button>
     <button id="reaction-button" type="button">Reaction Game</button>
