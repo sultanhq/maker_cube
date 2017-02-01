@@ -3,7 +3,7 @@ var addDivs = function(){
   document.getElementById('1-4').innerHTML = divs;
 }
 var addSizes = function(){
-  var piPanelStyle = 'width: 32px; height: 32px; text-align: center; vertical-align: middle; line-height: 32px;';
+  var piPanelStyle = 'width: 32px; height: 32px; text-align: center; vertical-align: middle; line-height: 27px;';
   var panelIDs = ['top', '1', '2', '3', '4', 'bottom'];
   for (var i = 0; i < panelIDs.length; i++){
     document.getElementById(panelIDs[i]).setAttribute('style', piPanelStyle);
@@ -11,7 +11,7 @@ var addSizes = function(){
 }
 var addCircles = function(){
   var circle = "\u25cb";
-  var color = 'color: red; font-size: 48px; font-weight: bold;';
+  var color = 'color: red; font-size: 32px; font-weight: bold;';
   var panelIDs = ['1', '2', '3', '4'];
   for (var i = 0; i < panelIDs.length; i++){
     var element = document.getElementById(panelIDs[i]);
@@ -29,4 +29,12 @@ var greenCircles = function(){
     var elementStyle = element.getAttribute('style');
     element.setAttribute('style', elementStyle + green);
   }
+}
+
+var resetToGifs = function() {
+  var pics = "<div id='1'><img src='/static/cube/img/rainbow_squiggle.gif' height='32px,' width='32px' border='0'></div><!--" +
+  "--><div id='2'><img src='/static/cube/img/rainbow_ripples.gif' height='32px,' width='32px' border='0'></div><!--" +
+  "--><div id='3'><img src='/static/cube/img/rainbow_juggle.gif' height='32px,' width='32px' border='0'></div><!--" +
+  "--><div id='4'><img src='/static/cube/img/rainbow_wheels.gif' height='32px,' width='32px' border='0'></div><!--";
+  document.getElementById("1-4").innerHTML = pics;
 }
