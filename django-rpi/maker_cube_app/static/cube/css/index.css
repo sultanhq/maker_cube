@@ -1,11 +1,14 @@
 div {float: left; color: red;}
-#1-4 {vertical-align: middle;}
+#1-4 {
+  vertical-align: middle;
+}
 
 .marquee p {
   z-index: -10;
   position: relative;
+  width:128px;
+  min-height:32px;
   font-family: Tahoma, Arial, sans-serif;
-  width: 128px;
   height: 100%;
   margin: 0;
   white-space: nowrap;
@@ -32,5 +35,5 @@ div {float: left; color: red;}
 }
 
 .marquee p:nth-child(1) {
-  animation: left-one 7s linear infinite;
+  animation: left-one 10s linear infinite;
 }
