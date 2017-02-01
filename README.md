@@ -17,11 +17,28 @@ ____
 
 ____
 
-# Product:
+# View the video for the Makers Cube
+
+[Makers Cube Video](Add video link here - use a link to the computer)
+
+
+____
+
+# Features
+
+
+
+
+
+____
+
+# Product
 
 an interactive 6 sided battery powered LED cube
+Powered by a raspberry pi miniature computer
+Built on the Django web framework
+Languages and technologies used: Python, HTML, CSS, JavaScript, Linux, Django channels (websockets)
 
-powered by a raspberry pi miniature computer
 
 
 ## Features:
