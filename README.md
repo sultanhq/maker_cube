@@ -5,23 +5,28 @@ ___
 
 # The Maker Cube:
 
-<h4> 
-The Makers Cube is an art project to create a 6 sided LED cube, which is a interactive, decorative and customisable.
+<h4>
+The Makers Cube is an art project to create a 6 sided LED cube which is a **interactive**, **decorative** and **customisable**.
+<h4>
 
-The Makers Cube will provider users with:
+<body>
 
-A beautiful object
-An intuitive interactive experience
-Interesting and fun interactions and games
-</h4>
+<div>
+The Makers Cube will provider users with:<h4>
 
+* A beautiful object
+* Fun and interesting interactions and games
+* An intuitive experience
+
+<div>
+
+<p>
 ## Product:
-
-
 
 an interactive 6 sided battery powered LED cube
 
 powered by a raspberry pi miniature computer
+</p>
 
 ## Features:
 
@@ -65,3 +70,5 @@ powered by a raspberry pi miniature computer
 * Lithium Battery
 * IMU
 * Speaker
+
+</body>
