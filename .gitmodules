@@ -1,0 +1,3 @@
+[submodule "rpi-fb-matrix"]
+	path = rpi-fb-matrix
+	url = https://github.com/adafruit/rpi-fb-matrix.git
