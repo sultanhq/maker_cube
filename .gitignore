@@ -1,3 +1,6 @@
+#rgb-fb-matrix panel config file ignore
+rpi-fb-matrix/matrix.cfg
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
