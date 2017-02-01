@@ -1,7 +1,7 @@
 
 [![Stories in Ready](https://badge.waffle.io/sultanhq/maker_cube.svg?label=ready&title=Ready)](http://waffle.io/sultanhq/maker_cube)
 
-____
+
 
 # The Maker Cube:
 
@@ -15,14 +15,12 @@ ____
 #### - An intuitive experience
 
 
-____
 
 # View the video for the Makers Cube
 
 [Makers Cube Video](Add video link here - use a link to the computer)
 
 
-____
 
 # Features
 
@@ -30,7 +28,6 @@ ____
 
 
 
-____
 
 # Product
 
