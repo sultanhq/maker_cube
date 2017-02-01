@@ -12,12 +12,12 @@ The Makers Cube is an art project to create a 6 sided LED cube which is a **inte
 <body>
 
 <div>
-The Makers Cube will provider users with:<h4>
+<h4>The Makers Cube will provider users with:
 
 * A beautiful object
 * Fun and interesting interactions and games
 * An intuitive experience
-
+</h4>
 <div>
 
 <p>
