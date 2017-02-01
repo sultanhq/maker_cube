@@ -5,19 +5,20 @@ ___
 
 # The Maker Cube:
 
-<h4>
-The Makers Cube is an art project to create a 6 sided LED cube which is a **interactive**, **decorative** and **customisable**.
-<h4>
+
 
 <body>
 
 <div>
-<h4>The Makers Cube will provider users with:
+
+### The Makers Cube is an art project to create a 6 sided LED cube which is a *interactive*, *decorative* and *customisable*.
+
+### The Makers Cube will provider users with:
 
 * A beautiful object
 * Fun and interesting interactions and games
 * An intuitive experience
-</h4>
+
 <div>
 
 <p>
