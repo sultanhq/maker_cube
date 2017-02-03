@@ -12,3 +12,4 @@ def mobile(request):
     # return HttpResponse("HELLO WORLD")
     ip = {"ip": current_address(),}
     return render(request, 'cube/mobile.html', ip)
+
