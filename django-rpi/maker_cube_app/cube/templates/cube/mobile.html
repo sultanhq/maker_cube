@@ -7,6 +7,8 @@
     <link rel="stylesheet" href='{% static "cube/css/fonts.css"%}'></style>
     <script src='{% static "cube/js/indexSockets.js"%}'></script>
     <script src='{% static "cube/js/mobile.js"%}'></script>
+    <script src='{% static "cube/js/reactionLogic.js"%}'></script>
+    <script src='{% static "cube/js/mobileViews.js"%}'></script>
 
   </head>
   <body bgcolor="black">
@@ -14,48 +16,69 @@
 
     <div class="menu">
       <ul>
-        <li><a href="#panels">Panels</a></li>
-        <li><a href="#message">Message</a></li>
-        <li><a href="#react">React</a></li>
-        <li><a href="#game">Game 2</a></li>
+        <li><a id='title-panel' href="#panels">Panels</a></li>
+        <li><a id='title-message' href="#message">Message</a></li>
+        <li><a id='title-react'href="#react">React</a></li>
+        <li><a id='title-game-2' href="#game">Game 2</a></li>
       </ul>
     </div>
 
     <div class="title">
       <h1>The Cube</h1>
     </div>
-
+      
     <div class="cube_image" style"text-align: center;">
       <img src='{% static "cube/img/borg_cube.jpg"%}'></img>
+    </div>  
+      
+    <div id='body-panel' class='bodies'>
+      <form class="checkbox" action="checkbox_select">
+          <input type="checkbox" id="check1" name="panel" class='panel' value="top" checked>
+          <label for="check1">/\</label>
+          <input type="checkbox" id="check2" name="panel" class='panel' value="4">
+          <label for="check2">1</label>
+          <input type="checkbox" id="check3" name="panel" class='panel' value="3">
+          <label for="check3">2</label>
+          <input type="checkbox" id="check4" name="panel" class='panel' value="2">
+          <label for="check4">3</label>
+          <input type="checkbox" id="check5" name="panel" class='panel' value="1">
+          <label for="check5">4</label>
+          <input type="checkbox" id="check6" name="panel" class='panel' value="bottom">
+          <label for="check6">\/</label>
+      </form>
+
+      <div class="select-dropdown">
+          <select id="dropdown">
+            <option value='\pics'>Pretty pictures</option>
+            <option value='\clock'>Time</option>
+            <option >Weather</option>
+            <option >Circles</option>
+          </select>
+      </div>
+
+        <button class='submit' type ="button" id="update_panels">Submit</button>"
     </div>
 
-    <form class="checkbox" action="checkbox_select">
-        <input type="checkbox" id="check1" name="panel" class='panel' value="top" checked>
-        <label for="check1">/\</label>
-        <input type="checkbox" id="check2" name="panel" class='panel' value="4">
-        <label for="check2">1</label>
-        <input type="checkbox" id="check3" name="panel" class='panel' value="3">
-        <label for="check3">2</label>
-        <input type="checkbox" id="check4" name="panel" class='panel' value="2">
-        <label for="check4">3</label>
-        <input type="checkbox" id="check5" name="panel" class='panel' value="1">
-        <label for="check5">4</label>
-        <input type="checkbox" id="check6" name="panel" class='panel' value="bottom">
-        <label for="check6">\/</label>
-    </form>
-
-    <div class="select-dropdown">
-        <select id="dropdown">
-          <option value='\pics'>Pretty pictures</option>
-          <option value='\clock'>Time</option>
-          <option >Weather</option>
-          <option >Circles</option>
-        </select>
-    </div>
+    <div id='body-message' class='bodies' style='display: none;'>
+      <input class='text' id='run-text' type='text'></input>
+      <button class='submit' id='run-text-submit' type='button'>Submit</button>
 
     </div>
-      <button type ="button" id="update_panels">Submit</button>"
-    <div>
+
+    <div id='body-react' class='bodies' style='display: none;'>
+
+      <button id='react-button' class='react' style='display: none;'>REACT</button>
+      <br>
+      <div id='name' class='name-display' style='color: limegreen;'>
+        <form action='' method='get'>
+          <input id='name-text' class='text' type='text' placeholder='Enter your name'/></input>
+          <input id='name-submit' type='submit' style='display: none;'/>
+        </form>
+      </div>
+
+      <button id="reaction-button" class='submit' type="button" style='top: 280px;'>Reaction</button>
+
+    </div>
 
   </body>
 </html>
