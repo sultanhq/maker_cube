@@ -61,3 +61,16 @@ var resetToGifs = function(IDarray) {
     document.getElementById(item).innerHTML = pics[rand];
   })
 }
+
+var borgify = function(IDarray){
+  addDivs();
+  var pics = ["<img class='face' src='/static/cube/img/borg/b1.gif'/>",
+    "<img class='face' src='/static/cube/img/borg/b2.gif'/>",
+    "<img class='face' src='/static/cube/img/borg/b3.gif'/>",
+    "<img class='face' src='/static/cube/img/borg/b4.gif'/>",
+    "<img class='face' src='/static/cube/img/borg/b5.gif'/>",
+    "<img class='face' src='/static/cube/img/borg/b6.gif'/>"];
+  IDarray.forEach( function(item, index){
+    document.getElementById(item).innerHTML = pics[index];
+  })
+}

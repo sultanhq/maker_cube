@@ -9,6 +9,8 @@ socket.onmessage = function(e) {
     playReact(time);
   } else if (message[0] === '\\clock') {
     showClock(message.slice(1));
+  } else if (message[0] === '\\borg'){
+    borgify(message.slice(1));
   } else {
     disableReactButton();
     document.getElementById("1-4").innerHTML = "<p>" + e.data + "</p>";
