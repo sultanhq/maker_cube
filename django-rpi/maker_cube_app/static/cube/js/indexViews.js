@@ -5,7 +5,7 @@ var addDivs = function() {
 
 var showClock = function() {
   addDivs();
-  var piClockPanelStyle = 'margin: 3px 0px 0px 0px;font-size: 14px; width: 32px; height: 32px; text-align: center; vertical-align: middle; line-height: 14px; word-wrap: break-word';
+  var piClockPanelStyle = 'margin: 3px 0px 0px 0px;font-size: 11px; width: 32px; height: 32px; text-align: center; vertical-align: middle; line-height: 14px; word-wrap: break-word';
   var clock = '<span id="clock">' + new Date().toLocaleTimeString() + '</span>';
   var panelIDs = ['1', '2', '3', '4'];
   for (var i = 0; i < panelIDs.length; i++) {
