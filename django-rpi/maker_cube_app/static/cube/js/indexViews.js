@@ -8,8 +8,8 @@ var addDivs = function() {
 
 var showClock = function(IDarray) {
   addDivs();
-  var piClockPanelStyle = 'margin: 3px 0px 0px 0px;font-size: 11px; width: 32px; height: 32px; text-align: center; vertical-align: middle; line-height: 14px; word-wrap: break-word';
-  var clock = '<span class="clock">' + new Date().toLocaleTimeString() + '</span>';
+  var piClockPanelStyle = 'font-size: 11px; width: 32px; height: 32px; text-align: center; vertical-align: middle; line-height: 14px; word-wrap: break-word';
+  var clock = '<span style="margin: 3px 0px 0px 0px;" class="clock">' + new Date().toLocaleTimeString() + '</span>';
   IDarray.forEach(function(item, index) {
     var element = document.getElementById(item);
     var elementStyle = element.getAttribute('style');
