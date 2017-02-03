@@ -1,39 +1,43 @@
-div {float: left; color: red;}
+div {
+    float: left;
+    color: limegreen;
+}
+
 #1-4 {
-  vertical-align: middle;
+    vertical-align: middle;
 }
 
 .marquee p {
-  z-index: -10;
-  position: relative;
-  width:128px;
-  min-height:32px;
-  font-family: Tahoma, Arial, sans-serif;
-  height: 100%;
-  margin: 0;
-  white-space: nowrap;
-  line-height: 32px;
-  font-size: 20px;
-  text-align: center;
-  vertical-align: centre;
-  color: #fff;
-  text-shadow: 1px 1px 0px #000000;
-  filter: dropshadow(color=#000000, offx=1, offy=1);
+    z-index: -10;
+    position: relative;
+    width: 128px;
+    min-height: 32px;
+    font-family: Tahoma, Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    white-space: nowrap;
+    line-height: 32px;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: centre;
+    color: #fff;
+    text-shadow: 1px 1px 0px #000000;
+    filter: dropshadow(color=#000000, offx=1, offy=1);
 }
 
 .marquee p {
-  transform:translateX(200%);
+    transform: translateX(200%);
 }
 
 @keyframes left-one {
-  0%  {
-    transform:translateX(100%);
-  }
-  100%{
-    transform:translateX(-200%);
-  }
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
 }
 
 .marquee p:nth-child(1) {
-  animation: left-one 10s linear infinite;
+    animation: left-one 10s linear infinite;
 }
