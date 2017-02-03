@@ -3,8 +3,8 @@
 <html>
   <head>
     <title>CUBE</title>
-    <link href="https://fonts.googleapis.com/css?family=Audiowide|Play|Questrial|Rubik" rel="stylesheet">
     <link rel="stylesheet" href='{% static "cube/css/mobile.css"%}'></style>
+    <link rel="stylesheet" href='{% static "cube/css/fonts.css"%}'></style>
     <script src='{% static "cube/js/indexSockets.js"%}'></script>
     <script src='{% static "cube/js/mobile.js"%}'></script>
 
@@ -23,6 +23,10 @@
 
     <div class="title">
       <h1>The Cube</h1>
+    </div>
+
+    <div class="cube_image" style"text-align: center;">
+      <img src='{% static "cube/img/borg_cube.jpg"%}'></img>
     </div>
 
     <form class="checkbox" action="checkbox_select">
