@@ -18,6 +18,12 @@ window.onload = function() {
     socket.send('\\react ' + time);
   });
 
+
+  document.getElementById('name-submit').addEventListener('click', function(click){
+    click.preventDefault();
+    setName();
+  });
+
   setInterval(function() {
     if (document.getElementById('clock')) {
       var panelIDs = ['1', '2', '3', '4'];
@@ -26,4 +32,5 @@ window.onload = function() {
       }
     }
   }, 1000);
+
 };

@@ -23,5 +23,4 @@ var playReact = function(time) {
     greenCircles();
     enableReactButton();
   }, time);
-  // disableReactButton();
 };
