@@ -1,7 +1,12 @@
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+  window.location = window.location + "mobile";
+}
+});
+
 window.onload = function(){
   document.getElementById('remove_text').addEventListener('click', function(clickEvent){
     socket.send('\\pics');
-  });
+
 
   document.getElementById('run_text_submit').addEventListener('click', function(clickEvent){
     clickEvent.preventDefault();
