@@ -1,16 +1,16 @@
 window.onload = function() {
-  document.getElementById('remove_text').addEventListener('click', function(clickEvent) {
-    socket.send('\\pics');
+  document.getElementById('remove-text').addEventListener('click', function(clickEvent) {
+    socket.send('\\pics top 1 2 3 4 bottom');
   });
 
-  document.getElementById('enable_clock').addEventListener('click', function(clickEvent) {
-    socket.send('\\clock');
+  document.getElementById('enable-clock').addEventListener('click', function(clickEvent) {
+    socket.send('\\clock 1 2 3 4');
   });
 
-  document.getElementById('run_text_submit').addEventListener('click', function(clickEvent) {
+  document.getElementById('run-text-submit').addEventListener('click', function(clickEvent) {
     clickEvent.preventDefault();
-    socket.send(document.getElementById('run_text').value);
-    document.getElementById('run_text').value = '';
+    socket.send(document.getElementById('run-text').value);
+    document.getElementById('run-text').value = '';
   });
 
   document.getElementById('reaction-button').addEventListener('click', function(e) {
@@ -25,10 +25,10 @@ window.onload = function() {
   });
 
   setInterval(function() {
-    if (document.getElementById('clock')) {
-      var panelIDs = ['1', '2', '3', '4'];
-      for (var i = 0; i < panelIDs.length; i++) {
-        updateClock(document.getElementById(panelIDs[i]));
+    if (document.getElementsByClassName('clock').length) {
+      var clocks = document.getElementsByClassName('clock')
+      for (var i = 0; i < clocks.length; i++){
+        updateClock(clocks[i]);
       }
     }
   }, 1000);

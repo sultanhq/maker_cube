@@ -1,19 +1,21 @@
 var addDivs = function() {
-  var divs = "<div id='4'>4</div><div id='3'>3</div><div id='2'>2</div><div id='1'>1</div>";
-  document.getElementById('1-4').innerHTML = divs;
+  if (document.getElementById('1')){} else{
+    var divs = "<div id='4'></div><div id='3'></div><div id='2'></div><div id='1'></div>";
+    document.getElementById('1-4').innerHTML = divs;
+    addSizes();
+  }
 };
 
-var showClock = function() {
+var showClock = function(IDarray) {
   addDivs();
   var piClockPanelStyle = 'margin: 3px 0px 0px 0px;font-size: 11px; width: 32px; height: 32px; text-align: center; vertical-align: middle; line-height: 14px; word-wrap: break-word';
-  var clock = '<span id="clock">' + new Date().toLocaleTimeString() + '</span>';
-  var panelIDs = ['1', '2', '3', '4'];
-  for (var i = 0; i < panelIDs.length; i++) {
-    var element = document.getElementById(panelIDs[i]);
+  var clock = '<span class="clock">' + new Date().toLocaleTimeString() + '</span>';
+  IDarray.forEach(function(item, index) {
+    var element = document.getElementById(item);
     var elementStyle = element.getAttribute('style');
-    document.getElementById(panelIDs[i]).setAttribute('style', piClockPanelStyle);
-    document.getElementById(panelIDs[i]).innerHTML = clock;
-  }
+    element.setAttribute('style', piClockPanelStyle);
+    element.innerHTML = clock;
+  });
 };
 
 var addSizes = function() {
@@ -46,10 +48,16 @@ var greenCircles = function() {
   }
 }
 
-var resetToGifs = function() {
-  var pics = "<div id='1'><img src='/static/cube/img/rainbow_squiggle.gif' height='32px,' width='32px' border='0'></div><!--" +
-    "--><div id='2'><img src='/static/cube/img/rainbow_ripples.gif' height='32px,' width='32px' border='0'></div><!--" +
-    "--><div id='3'><img src='/static/cube/img/rainbow_juggle.gif' height='32px,' width='32px' border='0'></div><!--" +
-    "--><div id='4'><img src='/static/cube/img/rainbow_wheels.gif' height='32px,' width='32px' border='0'></div><!--";
-  document.getElementById("1-4").innerHTML = pics;
+var resetToGifs = function(IDarray) {
+  addDivs();
+  var pics = ["<img class='face' src='/static/cube/img/rainbow_squiggle.gif'/>",
+    "<img class='face' src='/static/cube/img/rainbow_ripples.gif'/>",
+    "<img class='face' src='/static/cube/img/rainbow_juggle.gif'/>",
+    "<img class='face' src='/static/cube/img/rainbow_wheels.gif'/>",
+    "<img class='face' src='/static/cube/img/rainbow_sun.gif'/>",
+    "<img class='face' src='/static/cube/img/rainbow_infinity.gif'/>"];
+  IDarray.forEach( function(item, index){
+    var rand = parseInt(pics.length*Math.random());
+    document.getElementById(item).innerHTML = pics[rand];
+  })
 }

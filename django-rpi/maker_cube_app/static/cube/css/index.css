@@ -7,9 +7,11 @@ div {
     vertical-align: middle;
 }
 
-/*font-family: 'Quicksand', sans-serif;
-font-family: 'Orbitron', sans-serif;
-font-family: 'Audiowide', cursive;*/
+img.face{
+   height: 32px;
+   width: 32px;
+   border: 0;
+}
 
 h1 {font-family: 'Orbitron', sans-serif; }
 
