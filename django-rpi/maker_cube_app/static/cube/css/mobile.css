@@ -45,156 +45,171 @@ h1 {font-family: 'Audiowide', cursive;
     color: limegreen;
     padding: 25px;
     font-size: 32pt;
-    text-align: center;}
-
-    /*font-family: 'Rubik', sans-serif;
-    font-family: 'Questrial', sans-serif;
-    font-family: 'Play', sans-serif;
-    font-family: 'Audiowide', cursive;*/
-
-    /*
-      Hide radio button (the round disc)
-      we will use just the label to create pushbutton effect
-    */
-    input[type=checkbox] {
-        display:none;
-        margin:10px;
-    }
-
-    /*
-      Change the look'n'feel of labels (which are adjacent to radiobuttons).
-      Add some margin, padding to label
-    */
-
-    input[type=checkbox] + label {
-        width: 8%;
-        height: 6%;
-        font-family: 'Audiowide', cursive;
-        display:inline-block;
-        margin:-2px;
-        padding: 4px 12px;
-        background-color: black;
-        color: limegreen;
-        border: 1px solid limegreen;
-    }
-    /*
-     Change background color for label next to checked radio button
-     to make it look like highlighted button
-    */
-    input[type=checkbox]:checked + label {
-        width: 8%;
-        background-color: limegreen;
-        color: black;
-    }
-
-    button {
-      background-color: limegreen;
-      position: relative;         /* WebKit */
-      top: 280px; /* Green */
-      left: 35%;
-      border: none;
-      color: white;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;}
-
-    ul {
-    list-style-type: none;
-    font-family: 'Play', sans-serif;
-    font-size: 14px;
-    margin: 0;
-    padding: 0;
     text-align: center;
-    overflow: hidden;
-    background-color: #333;
-    }
+  }
 
-    li {
-        float: left;
-        text-align: center;
-    }
+  /*font-family: 'Rubik', sans-serif;
+  font-family: 'Questrial', sans-serif;
+  font-family: 'Play', sans-serif;
+  font-family: 'Audiowide', cursive;*/
 
-    li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
+  /*
+    Hide radio button (the round disc)
+    we will use just the label to create pushbutton effect
+  */
+  input[type=checkbox] {
+      display:none;
+      margin:10px;
+  }
 
-    .select-dropdown {position: relative;          /* WebKit */
-                top: 240px;
-                margin: 0px 23px 0px 23px;
-                border: 2px solid limegreen;
-                text-align: center;
-                background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
-                height: 29px;
-                overflow: hidden;
-                width: 87%;
-                }}
+  /*
+    Change the look'n'feel of labels (which are adjacent to radiobuttons).
+    Add some margin, padding to label
+  */
 
-    .select-dropdown select {
-                 background: red;
-                 font-size: 14px;
-                 height: 29px;
-                 padding: 0px; /* If you add too much padding here, the options won't show in IE */
-                 width: 90%;}
+  input[type=checkbox] + label {
+      width: 8%;
+      height: 6%;
+      font-family: 'Audiowide', cursive;
+      display:inline-block;
+      margin:-2px;
+      padding: 4px 12px;
+      background-color: black;
+      color: limegreen;
+      border: 1px solid limegreen;
+  }
+  /*
+   Change background color for label next to checked radio button
+   to make it look like highlighted button
+  */
+  input[type=checkbox]:checked + label {
+      width: 8%;
+      background-color: limegreen;
+      color: black;
+  }
 
-                /*#mainselection select {
-                   border: 1;
-                   color: limegreen;
-                   border-color: limegreen;
-                   background: transparent;
-                   font-size: 20px;
-                   font-weight: bold;
-                   padding: 2px 10px;
-                   width: 378px;
-                   background: #000;
-                   -webkit-appearance: none;
-                }
+  input.text{
+    position: relative;
+    color: white;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 20pt;
+    top: 240px;
+    margin: 0px 23px 0px 23px;
+    border: 2px solid limegreen;
+    text-align: center;
+    background: black;
+    height: 29px;
+    width: 87%;
+  }
 
-                #mainselection {
-                   overflow:hidden;
-                   width:350px;
-                   -moz-border-radius: 9px 9px 9px 9px;
-                   -webkit-border-radius: 9px 9px 9px 9px;
-                   border-radius: 9px 9px 9px 9px;
-                   box-shadow: 1px 1px 11px limegreen;
-                   background: #000 url("http://i62.tinypic.com/15xvbd5.png") no-repeat scroll 319px center;
-                }
+  button.submit {
+    background-color: limegreen;
+    position: relative;         /* WebKit */
+    top: 280px; /* Green */
+    left: 35%;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;}
+
+  ul {
+  list-style-type: none;
+  font-family: 'Play', sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+  background-color: #333;
+  }
+
+  li {
+      float: left;
+      text-align: center;
+  }
+
+  li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+  }
+
+  .select-dropdown {position: relative;          /* WebKit */
+              top: 240px;
+              margin: 0px 23px 0px 23px;
+              border: 2px solid limegreen;
+              text-align: center;
+              background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+              height: 29px;
+              overflow: hidden;
+              width: 87%;
+              }}
+
+  .select-dropdown select {
+               background: red;
+               font-size: 14px;
+               height: 29px;
+               padding: 0px; /* If you add too much padding here, the options won't show in IE */
+               width: 90%;}
+
+              /*#mainselection select {
+                 border: 1;
+                 color: limegreen;
+                 border-color: limegreen;
+                 background: transparent;
+                 font-size: 20px;
+                 font-weight: bold;
+                 padding: 2px 10px;
+                 width: 378px;
+                 background: #000;
+                 -webkit-appearance: none;
+              }
+
+              #mainselection {
+                 overflow:hidden;
+                 width:350px;
+                 -moz-border-radius: 9px 9px 9px 9px;
+                 -webkit-border-radius: 9px 9px 9px 9px;
+                 border-radius: 9px 9px 9px 9px;
+                 box-shadow: 1px 1px 11px limegreen;
+                 background: #000 url("http://i62.tinypic.com/15xvbd5.png") no-repeat scroll 319px center;
+              }
 
 
-                /* -------------------- Select Box Styles: stackoverflow.com Method */
-                /* -------------------- Source: http://stackoverflow.com/a/5809186 */
-                select#soflow, select#soflow-color {
-                   -webkit-appearance: button;
-                   -webkit-border-radius: 2px;
-                   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-                   -webkit-padding-end: 20px;
-                   -webkit-padding-start: 2px;
-                   -webkit-user-select: none;
-                   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
-                   background-position: 97% center;
-                   background-repeat: no-repeat;
-                   border: 1px solid #limegreen;
-                   color: #limegreen;
-                   font-size: inherit;
-                   margin: 20px;
-                   overflow: hidden;
-                   padding: 5px 10px;
-                   text-overflow: ellipsis;
-                   white-space: nowrap;
-                   width: 300px;
-                }
+              /* -------------------- Select Box Styles: stackoverflow.com Method */
+              /* -------------------- Source: http://stackoverflow.com/a/5809186 */
+              select#soflow, select#soflow-color {
+                 -webkit-appearance: button;
+                 -webkit-border-radius: 2px;
+                 -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+                 -webkit-padding-end: 20px;
+                 -webkit-padding-start: 2px;
+                 -webkit-user-select: none;
+                 background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+                 background-position: 97% center;
+                 background-repeat: no-repeat;
+                 border: 1px solid #limegreen;
+                 color: #limegreen;
+                 font-size: inherit;
+                 margin: 20px;
+                 overflow: hidden;
+                 padding: 5px 10px;
+                 text-overflow: ellipsis;
+                 white-space: nowrap;
+                 width: 300px;
+              }
 
-                select#soflow-color {
-                   color: #fff;
-                   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#779126, #779126 40%, #779126);
-                   background-color: #779126;
-                   -webkit-border-radius: 20px;
-                   -moz-border-radius: 20px;
-                   border-radius: 20px;
-                   padding-left: 15px;
-                }*/
+              select#soflow-color {
+                 color: #fff;
+                 background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#779126, #779126 40%, #779126);
+                 background-color: #779126;
+                 -webkit-border-radius: 20px;
+                 -moz-border-radius: 20px;
+                 border-radius: 20px;
+                 padding-left: 15px;
+              }*/
