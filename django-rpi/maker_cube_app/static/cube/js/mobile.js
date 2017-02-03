@@ -17,5 +17,5 @@ var getCheckboxValues = function(){
       ids += boxes[i].getAttribute('value') + ' ';
     }
   }
-  return ids;
+  return ids.trimRight();
 };
