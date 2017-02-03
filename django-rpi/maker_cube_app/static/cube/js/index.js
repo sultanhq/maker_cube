@@ -1,3 +1,8 @@
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+  window.location = window.location + "mobile";
+}
+});
+
 window.onload = function() {
   document.getElementById('remove-text').addEventListener('click', function(clickEvent) {
     socket.send('\\pics top 1 2 3 4 bottom');
