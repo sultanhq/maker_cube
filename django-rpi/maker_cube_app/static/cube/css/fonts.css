@@ -1,0 +1,15 @@
+@font-face {
+font-family: 'Audiowide';
+src: url('../fonts/Audiowide-Regular.ttf')  format('truetype');
+font-weight: bold;
+}
+@font-face {
+font-family: 'Play';
+src: url('../fonts/Play-Regular.ttf')  format('truetype');
+font-weight: bold;
+}
+@font-face {
+font-family: 'Questrial';
+src: url('../fonts/Questrial-Regular.ttf')  format('truetype');
+font-weight: bold;
+}
