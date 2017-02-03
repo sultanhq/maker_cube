@@ -18,5 +18,4 @@ var playReact = function(time){
   addCircles();
   addReactButton();
   setTimeout(function(){  greenCircles(); enableReactButton(); }, time);
-  // disableReactButton();
 }
