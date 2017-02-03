@@ -50,12 +50,12 @@ var greenCircles = function() {
 
 var resetToGifs = function(IDarray) {
   addDivs();
-  var pics = ["<img src='/static/cube/img/rainbow_squiggle.gif' height='32px,' width='32px' border='0'>",
-    "<img src='/static/cube/img/rainbow_ripples.gif' height='32px,' width='32px' border='0'>",
-    "<img src='/static/cube/img/rainbow_juggle.gif' height='32px,' width='32px' border='0'>",
-    "<img src='/static/cube/img/rainbow_wheels.gif' height='32px,' width='32px' border='0'>",
-    "<img src='/static/cube/img/rainbow_sun.gif' height='32px,' width='32px' border='0'>",
-    "<img src='/static/cube/img/rainbow_infinity.gif' height='32px,' width='32px' border='0'>"];
+  var pics = ["<img class='face' src='/static/cube/img/rainbow_squiggle.gif'/>",
+    "<img class='face' src='/static/cube/img/rainbow_ripples.gif'/>",
+    "<img class='face' src='/static/cube/img/rainbow_juggle.gif'/>",
+    "<img class='face' src='/static/cube/img/rainbow_wheels.gif'/>",
+    "<img class='face' src='/static/cube/img/rainbow_sun.gif'/>",
+    "<img class='face' src='/static/cube/img/rainbow_infinity.gif'/>"];
   IDarray.forEach( function(item, index){
     var rand = parseInt(pics.length*Math.random());
     document.getElementById(item).innerHTML = pics[rand];
