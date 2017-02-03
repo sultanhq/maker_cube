@@ -16,26 +16,14 @@ window.onload = function(){
       displayBody(item);
     });
   })
-};
 
-var getCheckboxValues = function(){
-  var ids = " ";
-  var boxes = document.getElementsByClassName('panel');
-  for (var i = 0; i < boxes.length; i++){
-    if (boxes[i].checked){
-      ids += boxes[i].getAttribute('value') + ' ';
-    }
-  }
-  return ids.trimRight();
-};
+  document.getElementById('name-submit').addEventListener('click', function(click){
+    click.preventDefault();
+    setName();
+  });
 
-var displayBody = function(type){
-  var bodies = document.getElementsByClassName('bodies');
-  for (var i = 0; i < bodies.length; i++){
-    if (bodies[i].id.includes(type)) {
-      bodies[i].removeAttribute('style');
-    } else {
-      bodies[i].setAttribute('style', 'display: none;');
-    }
-  }
-}
+  document.getElementById('reaction-button').addEventListener('click', function(e) {
+    var time = 2000 + Math.random() * 4000;
+    socket.send('\\react ' + time);
+  });
+};

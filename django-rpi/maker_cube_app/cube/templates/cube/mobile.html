@@ -7,6 +7,8 @@
     <link rel="stylesheet" href='{% static "cube/css/mobile.css"%}'></style>
     <script src='{% static "cube/js/indexSockets.js"%}'></script>
     <script src='{% static "cube/js/mobile.js"%}'></script>
+    <script src='{% static "cube/js/reactionLogic.js"%}'></script>
+    <script src='{% static "cube/js/mobileViews.js"%}'></script>
 
   </head>
   <body bgcolor="black">
@@ -58,7 +60,18 @@
       <button class='submit' id='run-text-submit' type='button'>Submit</button>
     </div>
 
-    <div id='body-react' class='bodies'>
+    <div id='body-react' class='bodies' style='display: none;'>
+
+      <button id='react-button' class='react' style='display: none;'>REACT</button>
+      <br>
+      <div id='name' class='name-display' style='color: limegreen;'>
+        <form action='' method='get'>
+          <input id='name-text' class='text' type='text' placeholder='Enter your name'/></input>
+          <input id='name-submit' type='submit' style='display: none;'/>
+        </form>
+      </div>
+
+      <button id="reaction-button" class='submit' type="button" style='top: 280px;'>Reaction</button>
 
     </div>
 
