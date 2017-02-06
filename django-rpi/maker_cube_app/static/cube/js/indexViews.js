@@ -75,6 +75,12 @@ var borgify = function(IDarray){
   })
 }
 
+var displayOnMainPanels = function(string){
+  var panelIDs = ['1', '2', '3', '4']
+  for (var i = 0; i < panelIDs.length; i++) {
+    var element = document.getElementById(panelIDs[i]);
+    element.innerHTML = string;
+  }
 var borgifyRed = function(IDarray){
   addDivs();
   var pic = "<img class='face' src='/static/cube/img/borg-red.gif'/>";

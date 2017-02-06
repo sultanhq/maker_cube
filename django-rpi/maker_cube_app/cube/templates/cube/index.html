@@ -13,6 +13,7 @@
     <script src='{% static "cube/js/reactionLogic.js"%}'></script>
     <script src='{% static "cube/js/index.js"%}'></script>
     <script src='{% static "cube/js/clock.js"%}'></script>
+    <script src='{% static "cube/js/simonLogic.js"%}'></script>
     <script src='{% static "cube/js/env.js"%}'></script>
     <script src='{% static "cube/js/slack.js"%}'></script>
   </head>
@@ -32,7 +33,7 @@
     <br>
     <br><button id='react-button' style='display: none;'>REACT</button>
     <br>
-    <br>
+    <br><div id='simon-moves' style='display: none;'></div>
     <br><div id='name'><form action='' method='get'><input id='name-text' type='text' placeholder='Enter your name'/></input><input id='name-submit' type='submit' style='display: none;'/></form></div>
     <br>
     <br>
@@ -44,6 +45,7 @@
     <button id="enable-clock" type="button">Show Time</button>
     <button id="reaction-button" type="button">Reaction Game</button>
     <br><button id='borg' type='button'>Borgify</button>
+    <button id='simon' type='button'>Simon says</button>
     <br><button id='borg-red' type='button'>Borgify-red</button>
     <br><button id='hot-coals' type='button'>hot_coals</button>
     <br><button id='water' type='button'>water</button>

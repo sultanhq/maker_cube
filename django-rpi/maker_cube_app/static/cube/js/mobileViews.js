@@ -26,3 +26,20 @@ var addDivs = function(){
 var addSizes = function(){}
 var addCircles = function() {}
 var greenCircles = function() {}
+
+var hideSimonArrows = function() {
+  document.getElementById('arrow-container').setAttribute('style', 'display: none;');
+}
+var showSimonArrows = function() {
+  document.getElementById('arrow-container').setAttribute('style', '');
+}
+var incrementSimonDifficulty = function(){
+  var element = document.getElementById('simon-difficulty');
+  element.innerHTML = parseInt(element.innerHTML) + 2;
+}
+var hidePlaySimon = function() {
+  document.getElementById('simon-button').setAttribute('style', 'display: none;');
+}
+var showPlaySimon = function() {
+  document.getElementById('simon-button').setAttribute('style', '');
+}
