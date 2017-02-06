@@ -21,12 +21,12 @@ time, mark, audio, video {
 }
 
 div.title {width: 100%;
-     height: 50px;
+     height: 40px;
      text-align: center;}
 
 div.cube_image img {
   position: relative;
-  top: 100px;
+  top: 50px;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -34,7 +34,7 @@ div.cube_image img {
 
 form.checkbox {
    position: relative;
-   top: 200px;
+   top: 150px;
    text-align: center;
    width: 100%;
 }
@@ -100,7 +100,7 @@ h1 {font-family: 'Audiowide', cursive;
     color: white;
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 20pt;
-    top: 240px;
+    top: 200px;
     margin: 0px 23px 0px 23px;
     border: 2px solid limegreen;
     text-align: center;
@@ -121,10 +121,68 @@ h1 {font-family: 'Audiowide', cursive;
     height: 29px;
     width: 87%;
   }
+
+  button.arrow{
+    background-color: transparent;
+    position: relative;
+    text-align: center;
+    left: 15%;
+  }
+  button#simon-send{
+	width: 82px;
+	height: 82px;
+	background: lightgray;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+  position: relative;
+  left: 15%;
+}
+
+  button#triangle-up {
+    /*left: 120px;*/
+    left: 38.5%;
+  	width: 0;
+  	height: 0;
+  	border-left: 40px solid transparent;
+  	border-right: 40px solid transparent;
+  	border-bottom: 80px solid blue;
+    border-top: none;
+  }
+
+  button#triangle-down {
+    /*left: 120px;*/
+    left: 38.5%;
+  	width: 0;
+  	height: 0;
+  	border-left: 40px solid transparent;
+  	border-right: 40px solid transparent;
+  	border-top: 72px solid limegreen;
+    border-bottom: none;
+  }
+
+  button#triangle-left {
+  	width: 0;
+  	height: 0;
+  	border-top: 40px solid transparent;
+  	border-right: 72px solid gold;
+  	border-bottom: 40px solid transparent;
+    border-left: none;
+  }
+
+  button#triangle-right {
+  	width: 0;
+  	height: 0;
+  	border-top: 40px solid transparent;
+  	border-left: 72px solid red;
+  	border-bottom: 40px solid transparent;
+    border-right: none;
+  }
+
   button.react {
     background-color: cornflowerblue;
     position: relative;         /* WebKit */
-    top: 140px; /* Green */
+    top: 100px; /* Green */
     left: 20%;
     width: 60%;
     border: none;
@@ -139,7 +197,7 @@ h1 {font-family: 'Audiowide', cursive;
   button.submit {
     background-color: limegreen;
     position: relative;         /* WebKit */
-    top: 280px; /* Green */
+    top: 240px; /* Green */
     left: 35%;
     width: 30%;
     border: none;
@@ -200,7 +258,7 @@ h1 {font-family: 'Audiowide', cursive;
     }
 
     .select-dropdown {position: relative;          /* WebKit */
-                top: 240px;
+                top: 200px;
                 margin: 0px 23px 0px 23px;
                 border: 2px solid limegreen;
                 text-align: center;

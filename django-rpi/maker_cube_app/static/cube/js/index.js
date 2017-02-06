@@ -31,6 +31,10 @@ window.onload = function() {
     socket.send("\\borg top 1 2 3 4 bottom");
   });
 
+  document.getElementById('simon').addEventListener('click', function(click){
+    socket.send("\\play-simon 3");
+  });
+
   document.getElementById('slack').addEventListener('click', function(click) {
     socket.send("\\slack");
   });

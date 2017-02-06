@@ -19,7 +19,7 @@
         <li><a id='title-panel' href="#panels">Panels</a></li>
         <li><a id='title-message' href="#message">Message</a></li>
         <li><a id='title-react'href="#react">React</a></li>
-        <li><a id='title-game-2' href="#game">Game 2</a></li>
+        <li><a id='title-simon' href="#simon">Simon</a></li>
       </ul>
     </div>
 
@@ -29,6 +29,8 @@
 
     <div class="cube_image" style"text-align: center;">
       <img src='{% static "cube/img/borg_cube.jpg"%}'></img>
+
+    
     </div>
 
     <div id='body-panel' class='bodies'>
@@ -75,7 +77,7 @@
 
       <button id='react-button' class='react' style='display: none;'>REACT</button>
       <br>
-      <div id='name' class='name-display' style='color: limegreen;'>
+      <div id='name' class='name-display' style='color: limegreen; background-color:transparent'>
         <form action='' method='get'>
           <input id='name-text' class='text' type='text' placeholder='Enter your name'/></input>
           <input id='name-submit' type='submit' style='display: none;'/>
@@ -84,6 +86,25 @@
 
       <button id="reaction-button" class='submit' type="button" style='top: 280px;'>Reaction</button>
 
+    </div>
+
+    <div id='body-simon' class='bodies' style='display: none;'>
+
+      <div id='arrow-container' style='display: none;'>
+        <button id='triangle-up' class='arrow'  type='button'></button>
+        <br>
+        <button id='triangle-left' class='arrow'  type='button'></button>
+        <button id='simon-send' class='arrow' type='button'>Send</button>
+        <button id='triangle-right'class='arrow' type='button'></button>
+        <br>
+        <button id='triangle-down' class='arrow'  type='button'></button>
+      </div>
+
+      <br>
+      <button id='simon-button' class='submit' type='button' style='top: 10px'>Simon Says</button>
+
+      <div id='simon-difficulty' style='display: none;'>3</div>
+      <div id='simon-moves' style='display: none;'></div>
     </div>
 
   </body>

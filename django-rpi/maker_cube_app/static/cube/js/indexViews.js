@@ -1,5 +1,5 @@
 var addDivs = function() {
-  if (document.getElementById('1')){} else{
+  if (document.getElementById('1')) {} else {
     var divs = "<div id='4'></div><div id='3'></div><div id='2'></div><div id='1'></div>";
     document.getElementById('1-4').innerHTML = divs;
     addSizes();
@@ -55,67 +55,77 @@ var resetToGifs = function(IDarray) {
     "<img class='face' src='/static/cube/img/rainbow_juggle.gif'/>",
     "<img class='face' src='/static/cube/img/rainbow_wheels.gif'/>",
     "<img class='face' src='/static/cube/img/rainbow_sun.gif'/>",
-    "<img class='face' src='/static/cube/img/rainbow_infinity.gif'/>"];
-  IDarray.forEach( function(item, index){
-    var rand = parseInt(pics.length*Math.random());
+    "<img class='face' src='/static/cube/img/rainbow_infinity.gif'/>"
+  ];
+  IDarray.forEach(function(item, index) {
+    var rand = parseInt(pics.length * Math.random());
     document.getElementById(item).innerHTML = pics[rand];
   })
 }
 
-var borgify = function(IDarray){
+var borgify = function(IDarray) {
   addDivs();
   var pics = ["<img class='face' src='/static/cube/img/borg/b1.gif'/>",
     "<img class='face' src='/static/cube/img/borg/b2.gif'/>",
     "<img class='face' src='/static/cube/img/borg/b3.gif'/>",
     "<img class='face' src='/static/cube/img/borg/b4.gif'/>",
     "<img class='face' src='/static/cube/img/borg/b5.gif'/>",
-    "<img class='face' src='/static/cube/img/borg/b6.gif'/>"];
-  IDarray.forEach( function(item, index){
+    "<img class='face' src='/static/cube/img/borg/b6.gif'/>"
+  ];
+  IDarray.forEach(function(item, index) {
     document.getElementById(item).innerHTML = pics[index];
   })
 }
 
-var borgifyRed = function(IDarray){
+var displayOnMainPanels = function(string) {
+  var panelIDs = ['1', '2', '3', '4']
+  for (var i = 0; i < panelIDs.length; i++) {
+    var element = document.getElementById(panelIDs[i]);
+    element.innerHTML = string;
+  }
+}
+var borgifyRed = function(IDarray) {
   addDivs();
   var pic = "<img class='face' src='/static/cube/img/borg-red.gif'/>";
-  IDarray.forEach( function(item, index){
+  IDarray.forEach(function(item, index) {
     document.getElementById(item).innerHTML = pic;
   })
 }
 
-var hotCoals = function(IDarray){
+var hotCoals = function(IDarray) {
   addDivs();
   var pic = "<img class='face' src='/static/cube/img/hot-coals.gif'/>";
-  IDarray.forEach( function(item, index){
+  IDarray.forEach(function(item, index) {
     document.getElementById(item).innerHTML = pic;
   })
 }
 
-var water = function(IDarray){
+var water = function(IDarray) {
   addDivs();
   var pic = "<img class='face' src='/static/cube/img/water.gif'/>";
-  IDarray.forEach( function(item, index){
+  IDarray.forEach(function(item, index) {
     document.getElementById(item).innerHTML = pic;
   })
 }
 
-var waterfall = function(IDarray){
+var waterfall = function(IDarray) {
   addDivs();
   var pic = "<img class='face' src='/static/cube/img/waterfall.gif'/>";
-  IDarray.forEach( function(item, index){
+  IDarray.forEach(function(item, index) {
     document.getElementById(item).innerHTML = pic;
   })
 }
 
-var fireworks = function(IDarray){
+var fireworks = function(IDarray) {
   addDivs();
   var pics = ["<img class='face' src='/static/cube/img/firework_1.gif'/>",
     "<img class='face' src='/static/cube/img/firework_2.gif'/>",
     "<img class='face' src='/static/cube/img/firework_3.gif'/>",
     "<img class='face' src='/static/cube/img/firework_4.gif'/>",
     "<img class='face' src='/static/cube/img/firework_5.gif'/>",
-    "<img class='face' src='/static/cube/img/firework_6.gif'/>"];
-  IDarray.forEach( function(item, index){
+    "<img class='face' src='/static/cube/img/firework_6.gif'/>"
+  ];
+  IDarray.forEach(function(item, index) {
     document.getElementById(item).innerHTML = pics[index];
   })
 }
@@ -127,3 +137,4 @@ var off = function(IDarray){
     document.getElementById(item).innerHTML = pic;
   })
 }
+
