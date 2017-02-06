@@ -11,7 +11,7 @@ socket.onmessage = function(e) {
     showClock(message.slice(1));
   } else if (message[0] === '\\borg') {
     borgify(message.slice(1));
-  } else if (message[0] === '\\play-simon'){
+  } else if (message[0] === '\\play-simon') {
     playSimon(parseInt(message[1]));
   } else if (message[0] === '\\simon-says') {
     simonSays(message.slice(1));
@@ -27,6 +27,8 @@ socket.onmessage = function(e) {
     fireworks(message.slice(1));
   } else if (message[0] === '\\slack') {
     getSlackMessage();
+  } else if (message[0] === '\\weather') {
+    getWeather();
   } else {
     disableReactButton();
     document.getElementById("1-4").innerHTML = "<p>" + e.data + "</p>";

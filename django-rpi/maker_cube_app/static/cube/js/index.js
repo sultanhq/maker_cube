@@ -1,6 +1,6 @@
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
   window.location = window.location + "mobile";
-};
+}
 
 window.onload = function() {
   document.getElementById('remove-text').addEventListener('click', function(clickEvent) {
@@ -31,7 +31,11 @@ window.onload = function() {
     socket.send("\\borg top 1 2 3 4 bottom");
   });
 
-  document.getElementById('simon').addEventListener('click', function(click){
+  document.getElementById('weather').addEventListener('click', function(click) {
+    socket.send("\\weather");
+  });
+
+  document.getElementById('simon').addEventListener('click', function(click) {
     socket.send("\\play-simon 3");
   });
 

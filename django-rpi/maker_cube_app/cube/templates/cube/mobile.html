@@ -1,104 +1,109 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>CUBE</title>
-    <link rel="stylesheet" href='{% static "cube/css/mobile.css"%}'></style>
-    <link rel="stylesheet" href='{% static "cube/css/fonts.css"%}'></style>
+    <link rel="stylesheet" href='{% static "cube/css/mobile.css"%}'>
+    </style>
+    <link rel="stylesheet" href='{% static "cube/css/fonts.css"%}'>
+    </style>
     <script src='{% static "cube/js/indexSockets.js"%}'></script>
     <script src='{% static "cube/js/mobile.js"%}'></script>
     <script src='{% static "cube/js/reactionLogic.js"%}'></script>
     <script src='{% static "cube/js/mobileViews.js"%}'></script>
 
-  </head>
-  <body bgcolor="black">
+</head>
+
+<body bgcolor="black">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <div class="menu">
-      <ul>
-        <li><a id='title-panel' href="#panels">Panels</a></li>
-        <li><a id='title-message' href="#message">Message</a></li>
-        <li><a id='title-react'href="#react">React</a></li>
-        <li><a id='title-simon' href="#simon">Simon</a></li>
-      </ul>
+        <ul>
+            <li><a id='title-panel' href="#panels">Panels</a></li>
+            <li><a id='title-message' href="#message">Message</a></li>
+            <li><a id='title-react' href="#react">React</a></li>
+            <li><a id='title-simon' href="#simon">Simon</a></li>
+        </ul>
     </div>
 
     <div class="title">
-      <h1>The Cube</h1>
+        <h1>The Cube</h1>
     </div>
 
-    <div class="cube_image" style"text-align: center;">
-      <img src='{% static "cube/img/borg_cube.jpg"%}'></img>
-      <br>
+    <div class="cube_image" style "text-align: center;">
+        <img src='{% static "cube/img/borg_cube.jpg"%}'></img>
+        <br>
     </div>
 
     <div id='body-panel' class='bodies'>
-      <form class="checkbox" action="checkbox_select">
-          <input type="checkbox" id="check1" name="panel" class='panel' value="top" checked>
-          <label for="check1">/\</label>
-          <input type="checkbox" id="check2" name="panel" class='panel' value="4">
-          <label for="check2">1</label>
-          <input type="checkbox" id="check3" name="panel" class='panel' value="3">
-          <label for="check3">2</label>
-          <input type="checkbox" id="check4" name="panel" class='panel' value="2">
-          <label for="check4">3</label>
-          <input type="checkbox" id="check5" name="panel" class='panel' value="1">
-          <label for="check5">4</label>
-          <input type="checkbox" id="check6" name="panel" class='panel' value="bottom">
-          <label for="check6">\/</label>
-      </form>
+        <form class="checkbox" action="checkbox_select">
+            <input type="checkbox" id="check1" name="panel" class='panel' value="top" checked>
+            <label for="check1">/\</label>
+            <input type="checkbox" id="check2" name="panel" class='panel' value="4">
+            <label for="check2">1</label>
+            <input type="checkbox" id="check3" name="panel" class='panel' value="3">
+            <label for="check3">2</label>
+            <input type="checkbox" id="check4" name="panel" class='panel' value="2">
+            <label for="check4">3</label>
+            <input type="checkbox" id="check5" name="panel" class='panel' value="1">
+            <label for="check5">4</label>
+            <input type="checkbox" id="check6" name="panel" class='panel' value="bottom">
+            <label for="check6">\/</label>
+        </form>
 
-      <div class="select-dropdown">
-          <select id="dropdown">
+        <div class="select-dropdown">
+            <select id="dropdown">
             <option value='\pics'>Pretty pictures</option>
             <option value='\clock'>Time</option>
             <option >Weather</option>
             <option >Circles</option>
           </select>
-      </div>
+        </div>
 
-        <button class='submit' type ="button" id="update_panels">Submit</button>"
+        <button class='submit' type="button" id="update_panels">Submit</button>"
     </div>
 
     <div id='body-message' class='bodies' style='display: none;'>
-      <input class='text' id='run-text' type='text'></input>
-      <button class='submit' id='run-text-submit' type='button'>Submit</button>
+        <input class='text' id='run-text' type='text'></input>
+        <button class='submit' id='run-text-submit' type='button'>Submit</button>
 
     </div>
 
     <div id='body-react' class='bodies' style='display: none;'>
 
-      <button id='react-button' class='react' style='display: none;'>REACT</button>
-      <br>
-      <div id='name' class='name-display' style='color: limegreen; background-color:transparent'>
-        <form action='' method='get'>
-          <input id='name-text' class='text' type='text' placeholder='Enter your name'/></input>
-          <input id='name-submit' type='submit' style='display: none;'/>
-        </form>
-      </div>
+        <button id='react-button' class='react' style='display: none;'>REACT</button>
+        <br>
+        <div id='name' class='name-display' style='color: limegreen; background-color:transparent'>
+            <form action='' method='get'>
+                <input id='name-text' class='text' type='text' placeholder='Enter your name' /></input>
+                <input id='name-submit' type='submit' style='display: none;' />
+            </form>
+        </div>
 
-      <button id="reaction-button" class='submit' type="button" style='top: 280px;'>Reaction</button>
+        <button id="reaction-button" class='submit' type="button" style='top: 280px;'>Reaction</button>
 
     </div>
 
     <div id='body-simon' class='bodies' style='display: none;'>
 
-      <div id='arrow-container' style='display: none;'>
-        <button id='triangle-up' class='arrow'  type='button'></button>
-        <br>
-        <button id='triangle-left' class='arrow'  type='button'></button>
-        <button id='simon-send' class='arrow' type='button'>Send</button>
-        <button id='triangle-right'class='arrow' type='button'></button>
-        <br>
-        <button id='triangle-down' class='arrow'  type='button'></button>
-      </div>
+        <div id='arrow-container' style='display: none;'>
+            <button id='triangle-up' class='arrow' type='button'></button>
+            <br>
+            <button id='triangle-left' class='arrow' type='button'></button>
+            <button id='simon-send' class='arrow' type='button'>Send</button>
+            <button id='triangle-right' class='arrow' type='button'></button>
+            <br>
+            <button id='triangle-down' class='arrow' type='button'></button>
+        </div>
 
-      <br>
-      <button id='simon-button' class='submit' type='button' style='top: 10px'>Simon Says</button>
+        <br>
+        <button id='simon-button' class='submit' type='button' style='top: 10px'>Simon Says</button>
 
-      <div id='simon-difficulty' style='display: none;'>3</div>
-      <div id='simon-moves' style='display: none;'></div>
+        <div id='simon-difficulty' style='display: none;'>3</div>
+        <div id='simon-moves' style='display: none;'></div>
     </div>
 
-  </body>
+</body>
+
 </html>
