@@ -31,6 +31,11 @@ window.onload = function() {
   document.getElementById('borg').addEventListener('click', function(click){
     socket.send("\\borg top 1 2 3 4 bottom");
   })
+
+  document.getElementById('simon').addEventListener('click', function(click){
+    socket.send("\\play-simon 3");
+  })
+
   setInterval(function() {
     if (document.getElementsByClassName('clock').length) {
       var clocks = document.getElementsByClassName('clock')

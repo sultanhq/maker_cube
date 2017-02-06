@@ -74,3 +74,11 @@ var borgify = function(IDarray){
     document.getElementById(item).innerHTML = pics[index];
   })
 }
+
+var displayOnMainPanels = function(string){
+  var panelIDs = ['1', '2', '3', '4']
+  for (var i = 0; i < panelIDs.length; i++) {
+    var element = document.getElementById(panelIDs[i]);
+    element.innerHTML = string;
+  }
+}
