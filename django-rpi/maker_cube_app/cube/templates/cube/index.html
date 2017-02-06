@@ -4,12 +4,18 @@
   <head>
     <title>CUBE</title>
     <link rel="stylesheet" href='{% static "cube/css/index.css" %}'></style>
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
     <script src='{% static "cube/js/indexSockets.js"%}'></script>
     <script src='{% static "cube/js/indexViews.js"%}'></script>
     <script src='{% static "cube/js/reactionLogic.js"%}'></script>
     <script src='{% static "cube/js/index.js"%}'></script>
     <script src='{% static "cube/js/clock.js"%}'></script>
     <script src='{% static "cube/js/simonLogic.js"%}'></script>
+    <script src='{% static "cube/js/env.js"%}'></script>
+    <script src='{% static "cube/js/slack.js"%}'></script>
   </head>
   <body bgcolor="black">
     <br>
@@ -40,6 +46,12 @@
     <button id="reaction-button" type="button">Reaction Game</button>
     <br><button id='borg' type='button'>Borgify</button>
     <button id='simon' type='button'>Simon says</button>
+    <br><button id='borg-red' type='button'>Borgify-red</button>
+    <br><button id='hot-coals' type='button'>hot_coals</button>
+    <br><button id='water' type='button'>water</button>
+    <br><button id='waterfall' type='button'>waterfall</button>
+    <br><button id='fireworks' type='button'>fireworks</button>
+    <br><button id='slack' type='button'>slack</button>
   </body>
   </body>
 </html>
