@@ -55,6 +55,10 @@ window.onload = function() {
     socket.send("\\fireworks top 1 2 3 4 bottom");
   });
 
+  document.getElementById('off').addEventListener('click', function(click) {
+    socket.send("\\off top 1 2 3 4 bottom");
+  });
+
   setInterval(function() {
     if (document.getElementsByClassName('clock').length) {
       var clocks = document.getElementsByClassName('clock');

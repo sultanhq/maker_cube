@@ -119,3 +119,11 @@ var fireworks = function(IDarray){
     document.getElementById(item).innerHTML = pics[index];
   })
 }
+
+var off = function(IDarray){
+  addDivs();
+  var pic = "<img class='face' src='/static/cube/img/black.jpg'/>";
+  IDarray.forEach( function(item, index){
+    document.getElementById(item).innerHTML = pic;
+  })
+}
