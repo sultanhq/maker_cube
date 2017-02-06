@@ -1,5 +1,11 @@
 window.onload = function(){
 
+  document.getElementById('dropdown').addEventListener('change', function(){
+    var message = document.getElementById('dropdown').value;
+    message += getCheckboxValues();
+    socket.send(message);
+  });
+
   document.getElementById('update_panels').addEventListener('click', function(){
     var message = document.getElementById('dropdown').value;
     message += getCheckboxValues();
