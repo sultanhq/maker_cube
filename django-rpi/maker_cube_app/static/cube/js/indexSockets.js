@@ -9,23 +9,25 @@ socket.onmessage = function(e) {
     playReact(time);
   } else if (message[0] === '\\clock') {
     showClock(message.slice(1));
-  } else if (message[0] === '\\borg'){
+  } else if (message[0] === '\\borg') {
     borgify(message.slice(1));
-  } else if (message[0] === '\\borg-red'){
+  } else if (message[0] === '\\borg-red') {
     borgifyRed(message.slice(1));
-  } else if (message[0] === '\\hot-coals'){
+  } else if (message[0] === '\\hot-coals') {
     hotCoals(message.slice(1));
-  } else if (message[0] === '\\water'){
+  } else if (message[0] === '\\water') {
     water(message.slice(1));
-  } else if (message[0] === '\\waterfall'){
+  } else if (message[0] === '\\waterfall') {
     waterfall(message.slice(1));
-  } else if (message[0] === '\\fireworks'){
+  } else if (message[0] === '\\fireworks') {
     fireworks(message.slice(1));
+  } else if (message[0] === '\\slack') {
+    getSlackMessage();
   } else {
     disableReactButton();
     document.getElementById("1-4").innerHTML = "<p>" + e.data + "</p>";
   }
-}
+};
 
 var playReact = function(time) {
   addDivs();
