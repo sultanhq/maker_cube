@@ -15,6 +15,7 @@ window.onload = function() {
   document.getElementById('run-text-submit').addEventListener('click', function(clickEvent) {
     socket.send(document.getElementById('run-text').value);
     document.getElementById('run-text').value = '';
+    click.preventDefault();
   });
 
   ['panel', 'message', 'react', 'simon'].forEach(function(item, index) {
@@ -73,5 +74,6 @@ var sendSimon = function(){
   hideSimonArrows();
   showPlaySimon();
   var moves = document.getElementById('simon-moves').innerHTML.split('');
+  document.getElementById('simon-moves').innerHTML = '';
   socket.send('\\simon-says '+ getName('simon') + ' ' + moves.join(' '));
 }
