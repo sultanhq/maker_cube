@@ -18,6 +18,10 @@ var showClock = function(IDarray) {
   });
 };
 
+var scollingText = function() {
+    document.getElementById("1-4").innerHTML = "<p>" + e.data + "</p>";
+};
+
 var addSizes = function() {
   var piPanelStyle = 'width: 32px; height: 32px; text-align: center; vertical-align: middle; line-height: 27px;';
   var panelIDs = ['top', '1', '2', '3', '4', 'bottom'];

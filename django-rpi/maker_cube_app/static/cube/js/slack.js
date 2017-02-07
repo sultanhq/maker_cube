@@ -1,8 +1,11 @@
 var getSlackMessage = function() {
   var a;
   $.when(ajaxSlack()).done(function(data) {
-    a = data.messages[0].text;
-    document.getElementById("1-4").innerHTML = "<p>" + a + "</p>";
+    resetToGifs(['top', '1', '2', '3', '4', 'bottom']);
+    setTimeout(function(){
+      a = data.messages[0].text;
+      document.getElementById("1-4").innerHTML = "<p>" + a + "</p>";
+    }, 3000);
   });
 };
 

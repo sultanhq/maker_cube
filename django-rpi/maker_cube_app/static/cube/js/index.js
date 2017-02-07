@@ -36,7 +36,7 @@ window.onload = function() {
   });
 
   document.getElementById('slack').addEventListener('click', function(click) {
-    socket.send("\\slack");
+    socket.send("\\slack top 1 2 3 4 bottom");
   });
 
   document.getElementById('borg-red').addEventListener('click', function(click) {
