@@ -19,8 +19,30 @@ var showClock = function(IDarray) {
 };
 
 var scrollingText = function(string) {
-    document.getElementById("1-4").innerHTML = "<p>" + string + "</p>";
+    var element = document.getElementById("1-4");
+    element.innerHTML = "<p>" + string + "</p>";
+    changeScrollingDistance(string.length);
+    changeScrollingTime(string.length);
 };
+
+var changeScrollingDistance = function(len){
+  var dist = scrollDist(len);
+  $.keyframe.define([{
+    name: 'left-one',
+    '0%': {'transform' : 'translateX(120%);'},
+    '100%': {'transform' : 'translateX(-' + dist + '%);'
+  }}]);
+}
+
+var scrollDist = function(len){
+  return 50 + len / 12 * 100;
+}
+var changeScrollingTime = function(len){
+  var speed = 35; //pixels per second
+  var time = (1.28 * (scrollDist(len)+120))/speed;
+  var animation = 'left-one ' + time + 's linear infinite'
+  document.getElementById('1-4').childNodes[0].style.animation = animation;
+}
 
 var addSizes = function() {
   var piPanelStyle = 'width: 32px; height: 32px; text-align: center; vertical-align: middle; line-height: 27px;';

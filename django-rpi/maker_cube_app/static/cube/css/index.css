@@ -41,7 +41,7 @@ h1 {
 
 @keyframes left-one {
     0% {
-        transform: translateX(100%);
+        transform: translateX(120%);
     }
     100% {
         transform: translateX(-200%);
@@ -49,5 +49,6 @@ h1 {
 }
 
 .marquee p:nth-child(1) {
+    text-align: left;
     animation: left-one 10s linear infinite;
 }
