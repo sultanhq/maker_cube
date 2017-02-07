@@ -6,12 +6,8 @@ var playSimon = function(moves) {
   }
   storeMoves(moveArray);
   displayMoves(moveArray);
-<<<<<<< HEAD
-  console.log(moveArray.join(' '));
 };
-=======
-}
->>>>>>> master
+
 
 var storeMoves = function(array) {
   document.getElementById('simon-moves').innerHTML = array.join(' ');

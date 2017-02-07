@@ -18,8 +18,8 @@ var showClock = function(IDarray) {
   });
 };
 
-var scollingText = function() {
-    document.getElementById("1-4").innerHTML = "<p>" + e.data + "</p>";
+var scrollingText = function(string) {
+    document.getElementById("1-4").innerHTML = "<p>" + string + "</p>";
 };
 
 var addSizes = function() {
@@ -156,4 +156,3 @@ var off = function(IDarray){
     document.getElementById(item).innerHTML = pic;
   })
 }
-

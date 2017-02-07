@@ -34,7 +34,7 @@ socket.onmessage = function(e) {
     showWeather(message.slice(1));
   } else {
     disableReactButton();
-    scrollingText();
+    scrollingText(e.data);
   }
 };
 

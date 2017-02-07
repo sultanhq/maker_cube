@@ -13,7 +13,7 @@ var getWeather = function() {
 function ajaxOpenWeather() {
   var weatherData = "";
   return $.ajax({
-    url: 'http://api.openweathermap.org/data/2.5/find?q=London&units=metric&appid=' + window.openWeatherAPIKey() + '',
+    url: 'http://api.openweathermap.org/data/2.5/find?q=London&units=metric&appid=' + window.openWeatherAPIKey(),
     dataType: "json",
     data: weatherData,
   });
