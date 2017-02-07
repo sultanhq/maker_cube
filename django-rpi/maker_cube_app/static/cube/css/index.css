@@ -7,13 +7,15 @@ div {
     vertical-align: middle;
 }
 
-img.face{
-   height: 32px;
-   width: 32px;
-   border: 0;
+img.face {
+    height: 32px;
+    width: 32px;
+    border: 0;
 }
 
-h1 {font-family: 'Orbitron', sans-serif; }
+h1 {
+    font-family: 'Orbitron', sans-serif;
+}
 
 .marquee p {
     z-index: -10;

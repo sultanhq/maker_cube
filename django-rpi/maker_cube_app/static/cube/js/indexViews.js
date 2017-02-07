@@ -72,7 +72,7 @@ var greenCircles = function() {
     var elementStyle = element.getAttribute('style');
     element.setAttribute('style', elementStyle + green);
   }
-}
+};
 
 var resetToGifs = function(IDarray) {
   addDivs();
@@ -86,8 +86,8 @@ var resetToGifs = function(IDarray) {
   IDarray.forEach(function(item, index) {
     var rand = parseInt(pics.length * Math.random());
     document.getElementById(item).innerHTML = pics[rand];
-  })
-}
+  });
+};
 
 var borgify = function(IDarray) {
   addDivs();
@@ -100,47 +100,62 @@ var borgify = function(IDarray) {
   ];
   IDarray.forEach(function(item, index) {
     document.getElementById(item).innerHTML = pics[index];
-  })
-}
+  });
+};
 
 var displayOnMainPanels = function(string) {
-  var panelIDs = ['1', '2', '3', '4']
+  var panelIDs = ['1', '2', '3', '4'];
   for (var i = 0; i < panelIDs.length; i++) {
     var element = document.getElementById(panelIDs[i]);
     element.innerHTML = string;
   }
-}
+};
+
 var borgifyRed = function(IDarray) {
   addDivs();
   var pic = "<img class='face' src='/static/cube/img/borg-red.gif'/>";
   IDarray.forEach(function(item, index) {
     document.getElementById(item).innerHTML = pic;
-  })
-}
+  });
+};
 
 var hotCoals = function(IDarray) {
   addDivs();
   var pic = "<img class='face' src='/static/cube/img/hot-coals.gif'/>";
   IDarray.forEach(function(item, index) {
     document.getElementById(item).innerHTML = pic;
-  })
-}
+  });
+};
 
 var water = function(IDarray) {
   addDivs();
   var pic = "<img class='face' src='/static/cube/img/water.gif'/>";
   IDarray.forEach(function(item, index) {
     document.getElementById(item).innerHTML = pic;
-  })
-}
+  });
+};
 
 var waterfall = function(IDarray) {
   addDivs();
   var pic = "<img class='face' src='/static/cube/img/waterfall.gif'/>";
   IDarray.forEach(function(item, index) {
     document.getElementById(item).innerHTML = pic;
-  })
-}
+  });
+};
+
+var showWeather = function(IDarray) {
+  addDivs();
+
+  weatherFontStyle = 'font-size: 11px; vertical-align: middle; width: 32px; height: 32px; text-align: center; vertical-align: middle; line-height: 32px; word-wrap: break-word';
+  IDarray.forEach(function(item, index) {
+    if (item & 1) {
+      document.getElementById(item).innerHTML = weatherIconHTML;
+    } else {
+      document.getElementById(item).innerHTML = weatherTemp;
+      document.getElementById(item).setAttribute('style', weatherFontStyle);
+    }
+  });
+};
 
 var fireworks = function(IDarray) {
   addDivs();

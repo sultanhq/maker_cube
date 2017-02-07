@@ -1,7 +1,8 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>CUBE</title>
     <link rel="stylesheet" href='{% static "cube/css/index.css" %}'></style>
     <script
@@ -11,36 +12,52 @@
     <script src='{% static "cube/js/keyframe.js"%}'></script>
     <script src='{% static "cube/js/indexSockets.js"%}'></script>
     <script src='{% static "cube/js/indexViews.js"%}'></script>
+    <script src='{% static "cube/js/indexSockets.js"%}'></script>
     <script src='{% static "cube/js/reactionLogic.js"%}'></script>
     <script src='{% static "cube/js/index.js"%}'></script>
     <script src='{% static "cube/js/clock.js"%}'></script>
     <script src='{% static "cube/js/simonLogic.js"%}'></script>
     <script src='{% static "cube/js/env.js"%}'></script>
     <script src='{% static "cube/js/slack.js"%}'></script>
-  </head>
-  <body bgcolor="black">
+    <script src='{% static "cube/js/weather.js"%}'></script>
+</head>
+
+<body bgcolor="black">
     <br>
     <br>
     <br>
-    <div><body style="margin: 4px 0px 0px 0px;">
-       <div id="top"><img src="{% static 'cube/img/rainbow_sun.gif' %}" height="32px," width="32px" border="0"></div><!--
-    --><div class= "marquee" id="1-4"><p>{{ip}}:8080</p></div><!--
-    --><div id="bottom"><img src="{% static 'cube/img/rainbow_wheels.gif' %}" height="32px," width="32px" border="0"></div>
+    <div>
+
+        <body style="margin: 4px 0px 0px 0px;">
+            <div id="top"><img src="{% static 'cube/img/rainbow_sun.gif' %}" height="32px," width="32px" border="0"></div>
+            <!--
+    -->
+            <div class="marquee" id="1-4">
+                <p>{{ip}}</p>
+            </div>
+            <!--
+    -->
+            <div id="bottom"><img src="{% static 'cube/img/rainbow_wheels.gif' %}" height="32px," width="32px" border="0"></div>
 
     </div>
     <br>
     <br>
+    <div id="weatherDiv"></div>
     <br>
     <br>
     <br><button id='react-button' style='display: none;'>REACT</button>
     <br>
-    <br><div id='simon-moves' style='display: none;'></div>
-    <br><div id='name'><form action='' method='get'><input id='name-text' type='text' placeholder='Enter your name'/></input><input id='name-submit' type='submit' style='display: none;'/></form></div>
+    <br>
+    <div id='simon-moves' style='display: none;'></div>
+    <br>
+    <div id='name'>
+        <form action='' method='get'><input id='name-text' type='text' placeholder='Enter your name' /></input><input id='name-submit' type='submit' style='display: none;' /></form>
+    </div>
     <br>
     <br>
     <form action='' method='get'>
-      <input id='run-text' type='text'></input>
-      <input id='run-text-submit' type='submit'/>
+        <input id='run-text' type='text'></input>
+        <input id='run-text-submit' type='submit' />
     </form>
     <button id="remove-text" type="button">Reset</button>
     <button id="enable-clock" type="button">Show Time</button>
@@ -53,7 +70,8 @@
     <br><button id='waterfall' type='button'>waterfall</button>
     <br><button id='fireworks' type='button'>fireworks</button>
     <br><button id='slack' type='button'>slack</button>
+    <br><button id='weather' type='button'>weather</button>
     <br><button id='off' type='button'>off</button>
-  </body>
-  </body>
+    </body>
+
 </html>
