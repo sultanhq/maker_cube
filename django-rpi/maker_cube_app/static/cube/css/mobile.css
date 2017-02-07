@@ -109,15 +109,15 @@ h1 {font-family: 'Audiowide', cursive;
     width: 87%;
   }
 
-  div#name{
+  div.name-display{
     position: relative;
     color: limegreen;
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 20pt;
-    top: 0px;
+    top: 200px;
     margin: 0px 23px 0px 23px;
     text-align: center;
-    background: black;
+    background-color: transparent;
     height: 29px;
     width: 87%;
   }

@@ -23,7 +23,7 @@ var tooSoon = function(){
 }
 
 var win = function(){
-  var name = getName();
+  var name = getName('react');
   socket.send( name + ' wins!');
   disableReactButton();
 }
@@ -34,17 +34,4 @@ var disableReactButton = function(){
   element.removeEventListener('click', tooSoon);
   element.removeEventListener('click', disableReactButton);
   element.removeEventListener('click', win);
-}
-
-var setName = function(){
-  document.getElementById('name').setAttribute('value', document.getElementById('name-text').value);
-  document.getElementById('name').innerHTML = document.getElementById('name-text').value;
-}
-
-var getName = function(){
-  if (document.getElementById('name').getAttribute('value')){
-    return document.getElementById('name').innerHTML;
-  } else {
-    return "Player";
-  }
 }

@@ -30,7 +30,7 @@
     <div class="cube_image" style"text-align: center;">
       <img src='{% static "cube/img/borg_cube.jpg"%}'></img>
 
-    
+
     </div>
 
     <div id='body-panel' class='bodies'>
@@ -64,12 +64,12 @@
           </select>
       </div>
 
-        <button class='submit' type ="button" id="update_panels">Submit</button>"
+        <button id="update_panels" class='submit' type ="button">Submit</button>"
     </div>
 
     <div id='body-message' class='bodies' style='display: none;'>
-      <input class='text' id='run-text' type='text'></input>
-      <button class='submit' id='run-text-submit' type='button'>Submit</button>
+      <input id='run-text' class='text' type='text'></input>
+      <button id='run-text-submit' class='submit' type='button'>Submit</button>
 
     </div>
 
@@ -77,14 +77,14 @@
 
       <button id='react-button' class='react' style='display: none;'>REACT</button>
       <br>
-      <div id='name' class='name-display' style='color: limegreen; background-color:transparent'>
+      <div id='name-react' class='name-display'>
         <form action='' method='get'>
-          <input id='name-text' class='text' type='text' placeholder='Enter your name'/></input>
-          <input id='name-submit' type='submit' style='display: none;'/>
+          <input id='name-text-react' class='text' type='text' placeholder='Enter your name' style='top: 0px;'/></input>
+          <input id='name-submit-react' type='submit' style='display: none;'/>
         </form>
       </div>
 
-      <button id="reaction-button" class='submit' type="button" style='top: 280px;'>Reaction</button>
+      <button id="reaction-button" class='submit' type="button">Reaction</button>
 
     </div>
 
@@ -99,9 +99,14 @@
         <br>
         <button id='triangle-down' class='arrow'  type='button'></button>
       </div>
-
+      <div id='name-simon' class='name-display'>
+        <form action='' method='get'>
+          <input id='name-text-simon' class='text' type='text' placeholder='Enter your name' style='top: 0px;'/></input>
+          <input id='name-submit-simon' type='submit' style='display: none;'/>
+        </form>
+      </div>
       <br>
-      <button id='simon-button' class='submit' type='button' style='top: 10px'>Simon Says</button>
+      <button id='simon-button' class='submit' type='button'>Simon Says</button>
 
       <div id='simon-difficulty' style='display: none;'>3</div>
       <div id='simon-moves' style='display: none;'></div>
