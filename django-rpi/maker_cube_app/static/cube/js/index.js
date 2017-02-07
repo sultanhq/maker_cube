@@ -3,6 +3,9 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
 }
 
 window.onload = function() {
+
+  getWeather();
+
   document.getElementById('remove-text').addEventListener('click', function(clickEvent) {
     socket.send('\\pics top 1 2 3 4 bottom');
   });

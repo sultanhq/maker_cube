@@ -117,6 +117,20 @@ var waterfall = function(IDarray) {
   });
 };
 
+var showWeather = function(IDarray) {
+  addDivs();
+
+  weatherFontStyle = 'font-size: 11px; vertical-align: middle; width: 32px; height: 32px; text-align: center; vertical-align: middle; line-height: 32px; word-wrap: break-word';
+  IDarray.forEach(function(item, index) {
+    if (item & 1) {
+      document.getElementById(item).innerHTML = weatherIconHTML;
+    } else {
+      document.getElementById(item).innerHTML = weatherTemp;
+      document.getElementById(item).setAttribute('style', weatherFontStyle);
+    }
+  });
+};
+
 var fireworks = function(IDarray) {
   addDivs();
   var pics = ["<img class='face' src='/static/cube/img/firework_1.gif'/>",
