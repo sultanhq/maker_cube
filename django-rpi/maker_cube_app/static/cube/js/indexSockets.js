@@ -31,7 +31,7 @@ socket.onmessage = function(e) {
     off(message.slice(1));
   } else {
     disableReactButton();
-    scrollingText();
+    scrollingText(e.data);
   }
 };
 

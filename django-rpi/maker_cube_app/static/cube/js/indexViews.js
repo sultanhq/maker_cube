@@ -18,8 +18,15 @@ var showClock = function(IDarray) {
   });
 };
 
-var scollingText = function() {
-    document.getElementById("1-4").innerHTML = "<p>" + e.data + "</p>";
+var scollingText = function(string) {
+    var len = string.length * 120;
+    var element = document.getElementById("1-4");
+    element.innerHTML = "<p>" + string + "</p>";
+    $.keyframe.define([{
+    name: 'left-one',
+    '100%': {
+        'transform' : 'translateX(((' + len + ')%);'
+    }}]);
 };
 
 var addSizes = function() {
@@ -141,4 +148,3 @@ var off = function(IDarray){
     document.getElementById(item).innerHTML = pic;
   })
 }
-
