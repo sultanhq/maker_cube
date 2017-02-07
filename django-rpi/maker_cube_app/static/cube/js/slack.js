@@ -10,11 +10,11 @@ var getSlackMessage = function() {
 };
 
 function ajaxSlack() {
-  var yourJsonData = "";
+  var slackData = "";
   return $.ajax({
-    url: 'https://slack.com/api/channels.history?token=' + window.key() +
-      '&channel=' + window.token() + '&count=1&pretty=1',
+    url: 'https://slack.com/api/channels.history?token=' + window.slackKey() +
+      '&channel=' + window.slackChannel() + '&count=1&pretty=1',
     dataType: "json",
-    data: yourJsonData,
+    data: slackData,
   });
 }

@@ -1,6 +1,7 @@
 var socket = new WebSocket("ws://" + window.location.host + "/chat/");
 
 socket.onmessage = function(e) {
+
   var message = e.data.split(' ');
   if (message[0] === '\\pics') {
     resetToGifs(message.slice(1));
@@ -11,7 +12,7 @@ socket.onmessage = function(e) {
     showClock(message.slice(1));
   } else if (message[0] === '\\borg') {
     borgify(message.slice(1));
-  } else if (message[0] === '\\play-simon'){
+  } else if (message[0] === '\\play-simon') {
     playSimon(parseInt(message[1]));
   } else if (message[0] === '\\simon-says') {
     simonSays(message.slice(1));
@@ -29,9 +30,11 @@ socket.onmessage = function(e) {
     getSlackMessage();
   } else if (message[0] === '\\off') {
     off(message.slice(1));
+  } else if (message[0] === '\\weather') {
+    showWeather(message.slice(1));
   } else {
     disableReactButton();
-    scrollingText();
+    scrollingText(e.data);
   }
 };
 

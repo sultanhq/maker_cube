@@ -1,4 +1,4 @@
-window.onload = function(){
+window.onload = function() {
 
   document.getElementById('dropdown').addEventListener('change', function(){
     var message = document.getElementById('dropdown').value;
@@ -17,11 +17,12 @@ window.onload = function(){
     document.getElementById('run-text').value = '';
   });
 
-  ['panel', 'message', 'react', 'simon'].forEach(function(item, index){
-    document.getElementById('title-'+item).addEventListener('click', function(c){
+  ['panel', 'message', 'react', 'simon'].forEach(function(item, index) {
+    document.getElementById('title-' + item).addEventListener('click', function(c) {
       displayBody(item);
     });
   });
+
 
   ['simon', 'react'].forEach(function(item, index){
     document.getElementById('name-submit-' + item).addEventListener('click', function(click){
@@ -38,18 +39,23 @@ window.onload = function(){
   document.getElementById('simon-button').addEventListener('click', function(){
     beginSimonSays();
   });
-  document.getElementById('triangle-up').addEventListener('click', function(){
-    document.getElementById('simon-moves').innerHTML += '0'
+
+  document.getElementById('triangle-up').addEventListener('click', function() {
+    document.getElementById('simon-moves').innerHTML += '0';
   });
-  document.getElementById('triangle-left').addEventListener('click', function(){
-    document.getElementById('simon-moves').innerHTML += '1'
+
+  document.getElementById('triangle-left').addEventListener('click', function() {
+    document.getElementById('simon-moves').innerHTML += '1';
   });
-  document.getElementById('triangle-right').addEventListener('click', function(){
-    document.getElementById('simon-moves').innerHTML += '2'
+
+  document.getElementById('triangle-right').addEventListener('click', function() {
+    document.getElementById('simon-moves').innerHTML += '2';
   });
-  document.getElementById('triangle-down').addEventListener('click', function(){
-    document.getElementById('simon-moves').innerHTML += '3'
+
+  document.getElementById('triangle-down').addEventListener('click', function() {
+    document.getElementById('simon-moves').innerHTML += '3';
   });
+
   document.getElementById('simon-send').addEventListener('click', function(){
     sendSimon();
   });
