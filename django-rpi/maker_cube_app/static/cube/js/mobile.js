@@ -21,11 +21,13 @@ window.onload = function(){
     document.getElementById('title-'+item).addEventListener('click', function(c){
       displayBody(item);
     });
-  })
+  });
 
-  document.getElementById('name-submit').addEventListener('click', function(click){
-    click.preventDefault();
-    setName();
+  ['simon', 'react'].forEach(function(item, index){
+    document.getElementById('name-submit-' + item).addEventListener('click', function(click){
+      click.preventDefault();
+      setName(item);
+    });
   });
 
   document.getElementById('reaction-button').addEventListener('click', function(e) {
@@ -34,11 +36,7 @@ window.onload = function(){
   });
 
   document.getElementById('simon-button').addEventListener('click', function(){
-    showSimonArrows();
-    hidePlaySimon();
-    var difficulty = document.getElementById('simon-difficulty').innerHTML;
-    incrementSimonDifficulty();
-    socket.send('\\play-simon ' + difficulty);
+    beginSimonSays();
   });
   document.getElementById('triangle-up').addEventListener('click', function(){
     document.getElementById('simon-moves').innerHTML += '0'
@@ -53,9 +51,21 @@ window.onload = function(){
     document.getElementById('simon-moves').innerHTML += '3'
   });
   document.getElementById('simon-send').addEventListener('click', function(){
-    hideSimonArrows();
-    showPlaySimon();
-    var moves = document.getElementById('simon-moves').innerHTML.split('');
-    socket.send('\\simon-says ' + moves.join(' '));
+    sendSimon();
   });
 };
+
+var beginSimonSays = function() {
+  showSimonArrows();
+  hidePlaySimon();
+  var difficulty = document.getElementById('simon-difficulty').innerHTML;
+  incrementSimonDifficulty();
+  socket.send('\\play-simon ' + difficulty);
+}
+
+var sendSimon = function(){
+  hideSimonArrows();
+  showPlaySimon();
+  var moves = document.getElementById('simon-moves').innerHTML.split('');
+  socket.send('\\simon-says '+ getName('simon') + ' ' + moves.join(' '));
+}
