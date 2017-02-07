@@ -27,7 +27,7 @@ socket.onmessage = function(e) {
     off(message.slice(1));
   } else {
     disableReactButton();
-    document.getElementById("1-4").innerHTML = "<p>" + e.data + "</p>";
+    scrollingText();
   }
 };
 
