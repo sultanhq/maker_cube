@@ -1,6 +1,12 @@
 window.onload = function() {
 
-  document.getElementById('update_panels').addEventListener('click', function() {
+  document.getElementById('dropdown').addEventListener('change', function(){
+    var message = document.getElementById('dropdown').value;
+    message += getCheckboxValues();
+    socket.send(message);
+  });
+
+  document.getElementById('update_panels').addEventListener('click', function(){
     var message = document.getElementById('dropdown').value;
     message += getCheckboxValues();
     socket.send(message);
@@ -17,9 +23,12 @@ window.onload = function() {
     });
   });
 
-  document.getElementById('name-submit').addEventListener('click', function(click) {
-    click.preventDefault();
-    setName();
+
+  ['simon', 'react'].forEach(function(item, index){
+    document.getElementById('name-submit-' + item).addEventListener('click', function(click){
+      click.preventDefault();
+      setName(item);
+    });
   });
 
   document.getElementById('reaction-button').addEventListener('click', function(e) {
@@ -27,12 +36,8 @@ window.onload = function() {
     socket.send('\\react ' + time);
   });
 
-  document.getElementById('simon-button').addEventListener('click', function() {
-    showSimonArrows();
-    hidePlaySimon();
-    var difficulty = document.getElementById('simon-difficulty').innerHTML;
-    incrementSimonDifficulty();
-    socket.send('\\play-simon ' + difficulty);
+  document.getElementById('simon-button').addEventListener('click', function(){
+    beginSimonSays();
   });
 
   document.getElementById('triangle-up').addEventListener('click', function() {
@@ -51,10 +56,22 @@ window.onload = function() {
     document.getElementById('simon-moves').innerHTML += '3';
   });
 
-  document.getElementById('simon-send').addEventListener('click', function() {
-    hideSimonArrows();
-    showPlaySimon();
-    var moves = document.getElementById('simon-moves').innerHTML.split('');
-    socket.send('\\simon-says ' + moves.join(' '));
+  document.getElementById('simon-send').addEventListener('click', function(){
+    sendSimon();
   });
 };
+
+var beginSimonSays = function() {
+  showSimonArrows();
+  hidePlaySimon();
+  var difficulty = document.getElementById('simon-difficulty').innerHTML;
+  incrementSimonDifficulty();
+  socket.send('\\play-simon ' + difficulty);
+}
+
+var sendSimon = function(){
+  hideSimonArrows();
+  showPlaySimon();
+  var moves = document.getElementById('simon-moves').innerHTML.split('');
+  socket.send('\\simon-says '+ getName('simon') + ' ' + moves.join(' '));
+}

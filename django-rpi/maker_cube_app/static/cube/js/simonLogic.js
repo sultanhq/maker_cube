@@ -6,8 +6,12 @@ var playSimon = function(moves) {
   }
   storeMoves(moveArray);
   displayMoves(moveArray);
+<<<<<<< HEAD
   console.log(moveArray.join(' '));
 };
+=======
+}
+>>>>>>> master
 
 var storeMoves = function(array) {
   document.getElementById('simon-moves').innerHTML = array.join(' ');
@@ -20,19 +24,27 @@ var getMoves = function() {
 var displayMoves = function(array) {
   addDivs();
   var i = 0;
-  (function innerLoop(j) {
-    displayOnMainPanels((j % 2 === 0 ? array[i++] : ''));
-    setTimeout(function() {
-      if (--j) {
+  (function innerLoop (j){
+    displayOnMainPanels( (j % 2 === 0 ? getSimonPic(array[i++]) : ''));
+    setTimeout( function(){
+      if (--j){
         innerLoop(j);
       }
     }, 600);
   })(array.length * 2);
 };
 
-var simonSays = function(theirArray) {
-  var playerName = 'Player';
-  if (isCorrect(theirArray)) {
+var getSimonPic = function(indexString){
+  var pics = ["<img class='face' src='/static/cube/img/simon/up.png'/>",
+              "<img class='face' src='/static/cube/img/simon/left.png'/>",
+              "<img class='face' src='/static/cube/img/simon/right.png'/>",
+              "<img class='face' src='/static/cube/img/simon/down.png'/>"];
+  return pics[parseInt(indexString)];
+}
+
+var simonSays = function(theirArray){
+  var playerName = theirArray[0];
+  if (isCorrect(theirArray.slice(1))){
     finishSimonSays(playerName, ' wins!');
   } else {
     finishSimonSays(playerName, ' is out!');

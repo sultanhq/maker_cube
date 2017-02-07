@@ -22,9 +22,9 @@ var tooSoon = function() {
   document.getElementById('react-button').addEventListener('click', disableReactButton);
 }
 
-var win = function() {
-  var name = getName();
-  socket.send(name + ' wins!');
+var win = function(){
+  var name = getName('react');
+  socket.send( name + ' wins!');
   disableReactButton();
 }
 

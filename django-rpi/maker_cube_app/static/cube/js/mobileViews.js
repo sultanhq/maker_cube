@@ -20,7 +20,20 @@ var displayBody = function(type) {
   }
 };
 
-var addDivs = function() {
+var setName = function(location){
+  document.getElementById('name-'+location).setAttribute('value', document.getElementById('name-text-'+location).value);
+  document.getElementById('name-'+location).innerHTML = document.getElementById('name-text-'+location).value;
+}
+
+var getName = function(location){
+  if (document.getElementById('name-'+location).getAttribute('value')){
+    return document.getElementById('name-'+location).innerHTML;
+  } else {
+    return "Player";
+  }
+}
+
+var addDivs = function(){
   // leave empty
 };
 
@@ -38,7 +51,7 @@ var showSimonArrows = function() {
 
 var incrementSimonDifficulty = function() {
   var element = document.getElementById('simon-difficulty');
-  element.innerHTML = parseInt(element.innerHTML) + 2;
+  element.innerHTML = parseInt(element.innerHTML) + 1;
 };
 
 var hidePlaySimon = function() {
