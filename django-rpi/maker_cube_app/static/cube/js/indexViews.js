@@ -135,14 +135,6 @@ var water = function(IDarray) {
   });
 };
 
-var waterfall = function(IDarray) {
-  addDivs();
-  var pic = "<img class='face' src='/static/cube/img/waterfall.gif'/>";
-  IDarray.forEach(function(item, index) {
-    document.getElementById(item).innerHTML = pic;
-  });
-};
-
 var showWeather = function(IDarray) {
   addDivs();
 

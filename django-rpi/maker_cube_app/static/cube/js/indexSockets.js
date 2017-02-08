@@ -22,8 +22,6 @@ socket.onmessage = function(e) {
     hotCoals(message.slice(1));
   } else if (message[0] === '\\water') {
     water(message.slice(1));
-  } else if (message[0] === '\\waterfall') {
-    waterfall(message.slice(1));
   } else if (message[0] === '\\fireworks') {
     fireworks(message.slice(1));
   } else if (message[0] === '\\slack') {
