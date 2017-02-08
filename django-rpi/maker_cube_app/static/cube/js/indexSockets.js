@@ -30,6 +30,8 @@ socket.onmessage = function(e) {
     off(message.slice(1));
   } else if (message[0] === '\\weather') {
     showWeather(message.slice(1));
+  } else if (message[0] === '\\roi') {
+    showRoi(message.slice(1));
   } else {
     disableReactButton();
     scrollingText(e.data);
