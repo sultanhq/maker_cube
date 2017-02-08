@@ -170,3 +170,11 @@ var off = function(IDarray){
     document.getElementById(item).innerHTML = blank;
   })
 }
+
+var showRoi = function(IDarray){
+  addDivs();
+  var roi = "<img class='face' src='/static/cube/img/roi.gif'/>"
+  IDarray.forEach( function(item, index){
+    document.getElementById(item).innerHTML = roi;
+  })
+}
