@@ -58,10 +58,6 @@ window.onload = function() {
     socket.send("\\water top 1 2 3 4 bottom");
   });
 
-  document.getElementById('waterfall').addEventListener('click', function(click) {
-    socket.send("\\waterfall top 1 2 3 4 bottom");
-  });
-
   document.getElementById('fireworks').addEventListener('click', function(click) {
     socket.send("\\fireworks top 1 2 3 4 bottom");
   });

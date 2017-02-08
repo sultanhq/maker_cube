@@ -135,14 +135,6 @@ var water = function(IDarray) {
   });
 };
 
-var waterfall = function(IDarray) {
-  addDivs();
-  var pic = "<img class='face' src='/static/cube/img/waterfall.gif'/>";
-  IDarray.forEach(function(item, index) {
-    document.getElementById(item).innerHTML = pic;
-  });
-};
-
 var showWeather = function(IDarray) {
   addDivs();
 
@@ -173,8 +165,8 @@ var fireworks = function(IDarray) {
 
 var off = function(IDarray){
   addDivs();
-  var pic = "<img class='face' src='/static/cube/img/black.jpg'/>";
+  var blank = "";
   IDarray.forEach( function(item, index){
-    document.getElementById(item).innerHTML = pic;
+    document.getElementById(item).innerHTML = blank;
   })
 }
