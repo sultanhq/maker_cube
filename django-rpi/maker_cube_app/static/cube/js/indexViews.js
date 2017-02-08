@@ -173,8 +173,8 @@ var fireworks = function(IDarray) {
 
 var off = function(IDarray){
   addDivs();
-  var pic = "<img class='face' src='/static/cube/img/black.jpg'/>";
+  var blank = "";
   IDarray.forEach( function(item, index){
-    document.getElementById(item).innerHTML = pic;
+    document.getElementById(item).innerHTML = blank;
   })
 }
