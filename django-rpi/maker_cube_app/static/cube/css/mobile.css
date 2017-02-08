@@ -126,7 +126,7 @@ h1 {font-family: 'Audiowide', cursive;
     background-color: transparent;
     position: relative;
     text-align: center;
-    left: 15%;
+    left: 48px;
   }
   button#simon-send{
 	width: 82px;
@@ -136,12 +136,10 @@ h1 {font-family: 'Audiowide', cursive;
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
   position: relative;
-  left: 15%;
 }
 
   button#triangle-up {
-    /*left: 120px;*/
-    left: 38.5%;
+    left: 132px;
   	width: 0;
   	height: 0;
   	border-left: 40px solid transparent;
@@ -151,8 +149,7 @@ h1 {font-family: 'Audiowide', cursive;
   }
 
   button#triangle-down {
-    /*left: 120px;*/
-    left: 38.5%;
+    left: 132px;
   	width: 0;
   	height: 0;
   	border-left: 40px solid transparent;
