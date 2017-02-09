@@ -225,8 +225,9 @@ where XXX and YYY are any numbers between 0 and 255.
 
 Enter this address into a mobile device's browser, and you will be taken to the mobile web app that controls the cube!
 
+From this page you can select what appears on what panel! `^` and `v` represent top and bottom and `1-4` are the horizontal faces.
 
-
+![panels](./readme/mobile-panels.jpg =360x)
 
 
 # sources:
