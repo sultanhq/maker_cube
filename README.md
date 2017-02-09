@@ -244,10 +244,11 @@ Press the green `Reaction` button and four red circles will appear on the Cube. 
 To play Simon Says, enter your name and press the enter button.
 
 ![simon-button](./readme/mobile-simon.png)
-
-Watch the arrow prompts on the cube, try to remember them and repeat the pattern on your phone. Play alone or with friends.
+Watch the arrow prompts on the cube, try to remember them and repeat the pattern on your phone. Press the send button when you have entered the patten.
 
 ![simon-arrows](/readme/mobile-simon-arrows.png)
+
+Play alone or with friends. Be careful, the pattern length increases by one each attempt!
 
 
 # sources:
