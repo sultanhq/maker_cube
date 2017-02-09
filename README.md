@@ -99,69 +99,47 @@ Languages and technologies used: Python, HTML, CSS, JavaScript, Linux, Django ch
 
 Mount Right angle brackets to the 4 of the panels
 
-![assembly_1](./readme/brackets.jpg =800x)
+![assembly_1](./readme/brackets.jpg)
 
 unscrew the 2 of the led panels from their frames to allow for mounting of the raspberry and battery mounts.
 
-![brackets](./readme/bottom_plate.jpg =800x)
+![brackets](./readme/bottom_plate.jpg)
 
 
 Solder all the connectors to the Pi RGB Hat except the screw terminals as these are not required.
 
 Disassemble one idc connector to create a longer cable due to the distances between the panels being a little bit too short
 
+![idc cables](./readme/idc_cables.jpg)
+
+
 Join 3 of the power looms from the panels together (because the looms have 2 panel connectors on each you can save on lots of cables). add an XT60 connector to the end to allow you to switch between battery and desktop power supplies. Tap onto the power supply cables the 2.5mm jack plug plug to power the Pi through the Pi RGB Hat
 
-![loom](./readme/loom.jpg =800x)
+![loom](./readme/loom.jpg)
 
-Bolt the 4 side panels together and then bolt to the base
+Bolt the 4 side panels together and then bolt to the base.
 
-![assembly_2](./readme/loom.jpg =800x)
+![assembly_2](./readme/bottom_bracket.jpg)
+
+Bolt four brackets to the top centre holes holes of the side panels.
+
+![brackets](./readme/top_brackets.jpg)
+
+Screw in four of the magnets into the top plate and fix the raspberry pi to this panel.
+
+![top plate](./readme/top_plate.jpg)
+
+-----------------
 
 
-
-## Software configuration:
+# Software configuration:
 
 Install Noobs Rasbian onto a microSD card [(Link to Noobs) ](https://www.raspberrypi.org/downloads/noobs) and start up your raspberry pi.
 
 Update your packages:
 ```
-sudo apt-get update
-sudo apt-get upgrade
-```
-
-*** does package come with python??? *** Install Python 2.7
-
-Install Python PIP
-
-```
-sudo apt-get install python-pip
-```
-
-Install Python package manager,
-```
-sudo pip install -U python-dotenv
-```
-
-Install and setup virtualenv
-```
-sudo pip install virtualenv
-
-mkdir -p ~/maker_cube/django-rpi
-cd ~/maker_cube/django-rpi/
-
-virtualenv venv && source venv/bin/activate
-```
-
-Install and start Django Package
-```
-pip install django
-django-admin startproject maker_cube_app
-```
-
-Finally run a Python migrate to complete the django setup.
-```
-python manage.py migrate
+$ sudo apt-get update
+$ sudo apt-get upgrade
 ```
 
 ## Clone the Repo
@@ -172,19 +150,54 @@ The sub modules are repositories that contain drivers for the LED screens. These
 
 To clone all of the nested repos run the following form the command line:
 
-`git clone --recursive https://github.com/sultanhq/maker_cube.git`
+`$ git clone --recursive https://github.com/sultanhq/maker_cube.git`
 
 If there has been a change to the sub modules you can pull all the updated modules using:
 
-`git submodule update --recursive`
+`$ git submodule update --recursive`
 
 
-compile the led library executables
+## Python
+
+Python comes pre-installed with Noobs, and for this project, we are using Python 2.7, so only the other dependancies need to be installed.
+
+Install Python PIP
+```
+$ sudo apt-get install python-pip
+```
+Install and setup virtualenv
+```
+$ sudo pip install virtualenv
+
+$ mkdir -p ~/maker_cube/django-rpi
+$ cd ~/maker_cube/django-rpi/
+
+$ virtualenv venv && source venv/bin/activate
+```
+
+Install Python dev tools
+```
+$ apt-get install python-dev
+```
+Install and start Django
+```
+$ pip install django
+$ django-admin startproject maker_cube_app
+```
+
+Finally run a Python migrate to complete the django setup.
+```
+$ python manage.py migrate
+```
+
+## LED Panels
+
+Compile the led library executables
 
 ```
-sudo apt-get install -y build-essential libconfig++-dev
-cd rpi-fb-matrix
-make
+$ sudo apt-get install -y build-essential libconfig++-dev
+$ cd rpi-fb-matrix
+$ make
 ```
 
 Copy the sample configuration file to the rpi-fb-matrix folder and rename removing the 'sample'
@@ -193,14 +206,11 @@ Setup chromium browser to autostart by copying the `autoChromium.desktop` file i
 
 ## rc.local file
 
-to get the django webserver to run on start up along with the led matrix output, add the following lines to ~/etc/rc.local (note the ***'&'***'s are important otherwise the Pi will lock up on boot)
+to get the django webserver to run on start up along with the led matrix output, amend the following lines to ~/etc/rc.local (note the ***'&'***'s are important otherwise the Pi will lock up on boot) and make sure that is all before the `exit 0`
 
 ```
 (sleep 15; cd /home/pi/maker_cube/django-rpi/maker_cube_app; /home/pi/maker_cube/django-rpi/venv/python /home/pi/maker_cube/django-rpi/maker_cube_app/manage.py runserver 0.0.0.0:8080)&
 (sleep 45; cd /home/pi/maker_cube/rpi-fb-matrix; sudo ./rpi-fb-matrix/matrix.cfg)&
-...
-
-exit 0
 ```
 
 ## turning off screen blanking
