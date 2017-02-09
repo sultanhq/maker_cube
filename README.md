@@ -215,6 +215,9 @@ and insert this line below it:
 
 ```xserver-command=X -s 0 dpms```
 
+## using the mobile Software
+
+
 
 # sources:
 
