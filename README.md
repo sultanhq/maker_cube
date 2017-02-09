@@ -227,7 +227,20 @@ Enter this address into a mobile device's browser, and you will be taken to the 
 
 From this page you can select what appears on what panel! `^` and `v` represent top and bottom and `1-4` are the horizontal faces.
 
-![panels](./readme/mobile-panels.jpg =360x)
+![panels](./readme/mobile-panels.png)
+
+To send a message to the cube, use this page. Simply type into the bar and press submit.
+
+![message](./readme/mobile-message.png)
+
+To play the Reaction game, type in your name into the box and press enter on your phone.
+
+![reaction-game](./readme/mobile-react.png)
+
+Press the green `Reaction` button and four red circles will appear on the Cube. When the circles turn green, hit the blue `REACT` button and win the game!
+
+![reaction-button](/readme/mobile-react-react.png)
+
 
 
 # sources:
