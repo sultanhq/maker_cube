@@ -213,9 +213,19 @@ In that file, look for:
 
 and insert this line below it:
 
-```xserver-command=X -s 0 dpms```
+`xserver-command=X -s 0 dpms`
 
-## using the mobile Software
+## using the mobile software
+
+When the cube is turned on, by default the first thing it displays is its local IP address:
+
+`192.168.XXX.YYY:8080`
+
+where XXX and YYY are any numbers between 0 and 255.
+
+Enter this address into a mobile device's browser, and you will be taken to the mobile web app that controls the cube!
+
+
 
 
 
