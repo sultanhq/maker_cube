@@ -1,0 +1,5 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Connect
+Comment=Opens Chromium Browser
+Exec=/usr/bin/chromium-browser --disable-infobars --disable-session-crashed-bubble http://localhost:8080
