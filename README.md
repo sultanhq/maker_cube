@@ -3,6 +3,8 @@
 
 # The Cube: An interactive hardware project by Rob Adams, George Seeger and Simon Conway
 
+[Product](#product) | [Technologies](#technologies) | [Hardware](#hardware) | [Assembly](#assembly) | [Software configuration](#software-configuration) | [Using the mobile web app](#using-the-mobile-web-app) | [Sources](#sources) |
+
 ## The Cube is an art project to create a 6 sided LED cube which is a *interactive*, *decorative* and *customisable*.
 
 
@@ -13,9 +15,12 @@
 #### - An intuitive experience
 
 
-# View a video of The Cube
+### View the product video for The Cube
 
-[The Cube Product video](https://youtu.be/uHEIrmeGmOU)
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=uHEIrmeGmOU
+" target="_blank"><img src="http://img.youtube.com/vi/uHEIrmeGmOU/0.jpg"
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
 
 
 # Product
@@ -85,8 +90,12 @@ Languages and technologies used: Python, HTML, CSS, JavaScript, Linux, Django ch
     * Soldering iron
     * Insulation tape
 
-#### View a time-lapse video of assembling The Cube
-  [Assembling The Cube time lapse video](link)
+### View a time-lapse video of assembling The Cube
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=MILVvn658B0
+" target="_blank"><img src="http://img.youtube.com/vi/MILVvn658B0/0.jpg"
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
+## Instructions:
 
 Mount Right angle brackets to the 4 of the panels
 
