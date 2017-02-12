@@ -20,6 +20,7 @@
 
 [Makers Cube Video](https://drive.google.com/file/d/0B8OJMhIN4INET0ZmSkEybzQ3dTg/view?usp=sharing)
 
+[Making The Cube video ](Add link here)
 
 
 # Product
@@ -42,7 +43,9 @@ Languages and technologies used: Python, HTML, CSS, JavaScript, Linux, Django ch
 
 
 #### MVP 2:
-* Currency ticker
+* Manual messages
+* Weather
+* Time display
 
 #### MVP 3:
 * Multiplayer games
