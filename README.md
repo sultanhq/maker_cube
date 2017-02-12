@@ -18,7 +18,7 @@
 
 # View the video for the Makers Cube
 
-[Makers Cube Video](Add video link here - use a link to the computer)
+[Makers Cube Video](https://youtu.be/uHEIrmeGmOU)
 
 
 
