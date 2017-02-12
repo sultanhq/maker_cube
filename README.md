@@ -5,6 +5,8 @@
 
 [Product](#product) | [Technologies](#technologies) | [Hardware](#hardware) | [Assembly](#assembly) | [Software configuration](#software-configuration) | [Using the mobile web app](#using-the-mobile-web-app) | [Sources](#sources) |
 
+![The Cube](./readme/the_cube.png)
+
 ## The Cube is an art project to create a 6 sided LED cube which is a *interactive*, *decorative* and *customisable*.
 
 
@@ -21,16 +23,12 @@
 " target="_blank"><img src="http://img.youtube.com/vi/uHEIrmeGmOU/0.jpg"
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
-
-
 # Product
 
 An interactive 6 sided battery powered LED cube
 Powered by a raspberry pi miniature computer
 Built on the Django web framework
 Languages and technologies used: Python, HTML, CSS, JavaScript, Linux, Django channels (WebSockets)
-
-
 
 ## Features:
 
