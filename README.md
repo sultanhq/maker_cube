@@ -3,9 +3,7 @@
 
 
 
-# The Cube: An interactive hardware project
-
-# By Rob Adams, George Seeger and Simon Conway
+# The Cube: An interactive hardware project by Rob Adams, George Seeger and Simon Conway
 
 
 ## The Cube is an art project to create a 6 sided LED cube which is *beautiful* *interactive* and *customisable*.
