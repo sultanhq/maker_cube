@@ -20,7 +20,7 @@
 
 [Makers Cube Video](https://drive.google.com/file/d/0B8OJMhIN4INET0ZmSkEybzQ3dTg/view?usp=sharing)
 
-[Making The Cube video ](Add link here)
+[Making The Cube video ](https://drive.google.com/open?id=0B8OJMhIN4INEQ1dOS3dLZkZ4cTQ)
 
 
 # Product
