@@ -15,6 +15,8 @@
 #### - An intuitive experience
 
 
+![](./readme/the_cube.png =800x)
+
 
 # View the video for the Makers Cube
 
