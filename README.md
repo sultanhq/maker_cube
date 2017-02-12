@@ -1,18 +1,16 @@
 
 [![Stories in Ready](https://badge.waffle.io/sultanhq/maker_cube.svg?label=ready&title=Ready)](http://waffle.io/sultanhq/maker_cube)
 
-
-
 # The Cube: An interactive hardware project by Rob Adams, George Seeger and Simon Conway
 
 ## The Cube is an art project to create a 6 sided LED cube which is a *interactive*, *decorative* and *customisable*.
 
-#### The Cube will provide users with:
+
+#### The Makers Cube will provider users with:
 
 #### - A beautiful object
 #### - Fun and interesting interactions and games
 #### - An intuitive experience
-
 
 
 # View a video of The Cube
@@ -68,7 +66,6 @@ Languages and technologies used: Python, HTML, CSS, JavaScript, Linux, Django ch
 * Lithium Battery
 
 
-
 # Technical notes
 
 ## Hardware:
@@ -114,7 +111,6 @@ Solder all the connectors to the Pi RGB Hat except the screw terminals as these 
 Disassemble one idc connector to create a longer cable due to the distances between the panels being a little bit too short
 
 ![idc cables](./readme/idc_cables.jpg)
-
 
 Join 3 of the power looms from the panels together (because the looms have 2 panel connectors on each you can save on lots of cables). add an XT60 connector to the end to allow you to switch between battery and desktop power supplies. Tap onto the power supply cables the 2.5mm jack plug plug to power the Pi through the Pi RGB Hat
 
@@ -226,7 +222,42 @@ In that file, look for:
 
 and insert this line below it:
 
-```xserver-command=X -s 0 dpms```
+`xserver-command=X -s 0 dpms`
+
+## using the mobile software
+
+When the cube is turned on, by default the first thing it displays is its local IP address:
+
+`192.168.XXX.YYY:8080`
+
+where XXX and YYY are any numbers between 0 and 255.
+
+Enter this address into a mobile device's browser, and you will be taken to the mobile web app that controls the cube!
+
+From this page you can select what appears on what panel! `^` and `v` represent top and bottom and `1-4` are the horizontal faces.
+
+![panels](./readme/mobile-panels.png)
+
+To send a message to the cube, use this page. Simply type into the bar and press submit.
+
+![message](./readme/mobile-message.png)
+
+To play the Reaction game, type in your name into the box and press enter on your phone.
+
+![reaction-game](./readme/mobile-react.png)
+
+Press the green `Reaction` button and four red circles will appear on the Cube. When the circles turn green, hit the blue `REACT` button and win the game!
+
+![reaction-button](/readme/mobile-react-react.png)
+
+To play Simon Says, enter your name and press the enter button.
+
+![simon-button](./readme/mobile-simon.png)
+Watch the arrow prompts on the cube, try to remember them and repeat the pattern on your phone. Press the send button when you have entered the patten.
+
+![simon-arrows](/readme/mobile-simon-arrows.png)
+
+Play alone or with friends. Be careful, the pattern length increases by one after each attempt even if you get it wrong! (refresh your page to restart at the begginer level)
 
 
 # sources:
