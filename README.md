@@ -3,12 +3,12 @@
 
 
 
-# The Maker Cube:
+# The Cube:
 
 
-## The Makers Cube is an art project to create a 6 sided LED cube which is a *interactive*, *decorative* and *customisable*.
+## The Cube is an art project to create a 6 sided LED cube which is a *interactive*, *decorative* and *customisable*.
 
-#### The Makers Cube will provider users with:
+#### The Cube will provide users with:
 
 #### - A beautiful object
 #### - Fun and interesting interactions and games
@@ -16,18 +16,17 @@
 
 
 
-# View the video for the Makers Cube
+# View a video of The Cube
 
-[Makers Cube Video](https://youtu.be/uHEIrmeGmOU)
-
+[The Cube Product video](https://youtu.be/uHEIrmeGmOU)
 
 
 # Product
 
-an interactive 6 sided battery powered LED cube
+An interactive 6 sided battery powered LED cube
 Powered by a raspberry pi miniature computer
 Built on the Django web framework
-Languages and technologies used: Python, HTML, CSS, JavaScript, Linux, Django channels (websockets)
+Languages and technologies used: Python, HTML, CSS, JavaScript, Linux, Django channels (WebSockets)
 
 
 
@@ -36,37 +35,39 @@ Languages and technologies used: Python, HTML, CSS, JavaScript, Linux, Django ch
 #### MVP:
 * display images
 * mood light
-* display slack mentions
-* display makers tweet messages
+
+#### MVP 2:
 * displaying the time
-
-
-#### MVP 2:
-* Currency ticker
+* "Panels" can be customised by app/webpage to choose what panels are shown and what is shown on them
 
 #### MVP 3:
 * Multiplayer games
  * Reaction Test
  * Simon-Says
 
-#### Bonus features:
-* "Panels" can be customised by app/webpage to choose what panels are shown and what is shown on them
+#### MVP 4:
+* Display slack mentions
+* Display current weather forecast
+
+#### Future Features:
+* Orientation based
 
 ## Technologies:
 * Linux
 * Javascript
 * HTML5
+* CSS
 * Python
 * Django
-* Websockets
+* WebSockets
 * Slack api
 * OpenWeather api
 
 ## Hardware:
-* LED's
+* LED Panel's
+* Raspberry Pi
 * Lithium Battery
-* IMU
-* Speaker
+
 
 
 # Technical notes
@@ -96,6 +97,9 @@ Languages and technologies used: Python, HTML, CSS, JavaScript, Linux, Django ch
     * Wire Cutters
     * Soldering iron
     * Insulation tape
+
+#### View a time-lapse video of assembling The Cube
+    [Assembling The Cube time lapse video]()
 
 Mount Right angle brackets to the 4 of the panels
 
