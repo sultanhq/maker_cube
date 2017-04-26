@@ -76,12 +76,12 @@ var greenCircles = function() {
 
 var resetToGifs = function(IDarray) {
   addDivs();
-  var pics = ["<img class='face' src='/static/cube/img/rainbow_squiggle.gif'/>",
-    "<img class='face' src='/static/cube/img/rainbow_ripples.gif'/>",
-    "<img class='face' src='/static/cube/img/rainbow_juggle.gif'/>",
-    "<img class='face' src='/static/cube/img/rainbow_wheels.gif'/>",
-    "<img class='face' src='/static/cube/img/rainbow_sun.gif'/>",
-    "<img class='face' src='/static/cube/img/rainbow_infinity.gif'/>"
+  var pics = ["<img class='face' src='img/rainbow_squiggle.gif'/>",
+    "<img class='face' src='img/rainbow_ripples.gif'/>",
+    "<img class='face' src='img/rainbow_juggle.gif'/>",
+    "<img class='face' src='img/rainbow_wheels.gif'/>",
+    "<img class='face' src='img/rainbow_sun.gif'/>",
+    "<img class='face' src='img/rainbow_infinity.gif'/>"
   ];
   IDarray.forEach(function(item, index) {
     var rand = parseInt(pics.length * Math.random());
@@ -91,12 +91,12 @@ var resetToGifs = function(IDarray) {
 
 var borgify = function(IDarray) {
   addDivs();
-  var pics = ["<img class='face' src='/static/cube/img/borg/b1.gif'/>",
-    "<img class='face' src='/static/cube/img/borg/b2.gif'/>",
-    "<img class='face' src='/static/cube/img/borg/b3.gif'/>",
-    "<img class='face' src='/static/cube/img/borg/b4.gif'/>",
-    "<img class='face' src='/static/cube/img/borg/b5.gif'/>",
-    "<img class='face' src='/static/cube/img/borg/b6.gif'/>"
+  var pics = ["<img class='face' src='img/borg/b1.gif'/>",
+    "<img class='face' src='img/borg/b2.gif'/>",
+    "<img class='face' src='img/borg/b3.gif'/>",
+    "<img class='face' src='img/borg/b4.gif'/>",
+    "<img class='face' src='img/borg/b5.gif'/>",
+    "<img class='face' src='img/borg/b6.gif'/>"
   ];
   IDarray.forEach(function(item, index) {
     document.getElementById(item).innerHTML = pics[index];
@@ -113,7 +113,7 @@ var displayOnMainPanels = function(string) {
 
 var borgifyRed = function(IDarray) {
   addDivs();
-  var pic = "<img class='face' src='/static/cube/img/borg-red.gif'/>";
+  var pic = "<img class='face' src='img/borg-red.gif'/>";
   IDarray.forEach(function(item, index) {
     document.getElementById(item).innerHTML = pic;
   });
@@ -121,7 +121,7 @@ var borgifyRed = function(IDarray) {
 
 var hotCoals = function(IDarray) {
   addDivs();
-  var pic = "<img class='face' src='/static/cube/img/hot-coals.gif'/>";
+  var pic = "<img class='face' src='img/hot-coals.gif'/>";
   IDarray.forEach(function(item, index) {
     document.getElementById(item).innerHTML = pic;
   });
@@ -129,11 +129,19 @@ var hotCoals = function(IDarray) {
 
 var water = function(IDarray) {
   addDivs();
-  var pic = "<img class='face' src='/static/cube/img/water.gif'/>";
+  var pic = "<img class='face' src='img/water.gif'/>";
   IDarray.forEach(function(item, index) {
     document.getElementById(item).innerHTML = pic;
   });
 };
+
+var playPong = function(IDarray) {
+  addDivs();
+  IDarray.forEach(function(item, index) {
+    createPongGame(item);
+  });
+};
+
 
 var showWeather = function(IDarray) {
   addDivs();
@@ -151,12 +159,12 @@ var showWeather = function(IDarray) {
 
 var fireworks = function(IDarray) {
   addDivs();
-  var pics = ["<img class='face' src='/static/cube/img/firework_1.gif'/>",
-    "<img class='face' src='/static/cube/img/firework_2.gif'/>",
-    "<img class='face' src='/static/cube/img/firework_3.gif'/>",
-    "<img class='face' src='/static/cube/img/firework_4.gif'/>",
-    "<img class='face' src='/static/cube/img/firework_5.gif'/>",
-    "<img class='face' src='/static/cube/img/firework_6.gif'/>"
+  var pics = ["<img class='face' src='img/firework_1.gif'/>",
+    "<img class='face' src='img/firework_2.gif'/>",
+    "<img class='face' src='img/firework_3.gif'/>",
+    "<img class='face' src='img/firework_4.gif'/>",
+    "<img class='face' src='img/firework_5.gif'/>",
+    "<img class='face' src='img/firework_6.gif'/>"
   ];
   IDarray.forEach(function(item, index) {
     document.getElementById(item).innerHTML = pics[index];
@@ -173,7 +181,7 @@ var off = function(IDarray){
 
 var showRoi = function(IDarray){
   addDivs();
-  var roi = "<img class='face' src='/static/cube/img/roi.gif'/>"
+  var roi = "<img class='face' src='img/roi.gif'/>"
   IDarray.forEach( function(item, index){
     document.getElementById(item).innerHTML = roi;
   })

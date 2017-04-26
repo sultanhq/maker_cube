@@ -1,4 +1,4 @@
-var socket = io('/pong');
+var pongSocket = io('/pong');
 
 var gameProperties = {
   players: [{
@@ -130,37 +130,37 @@ mainState.prototype = {
   },
 
   createSocketListeners: function() {
-    socket.on('Lcontrol message', function(data) {
+    pongSocket.on('Lcontrol message', function(data) {
       if (data.id === gameProperties.players[0].id) {
         this.playerMoveLeftPaddle(data.direction);
       }
     }.bind(this));
 
-    socket.on('Rcontrol message', function(data) {
+    pongSocket.on('Rcontrol message', function(data) {
       if (data.id === gameProperties.players[1].id) {
         this.playerMoveRightPaddle(data.direction);
       }
     }.bind(this));
 
-    socket.on('check', function() {
+    pongSocket.on('check', function() {
       this.sendAvailableSpaces();
     }.bind(this));
 
-    socket.on('join', function(data) {
+    pongSocket.on('join', function(data) {
       this.addPlayer(data);
     }.bind(this));
 
-    socket.on('disconnect', function(id) {
+    pongSocket.on('disconnect', function(id) {
       this.removePlayer(id);
     }.bind(this));
 
-    socket.on('newGame', function() {
+    pongSocket.on('newGame', function() {
       this.startGame();
     }.bind(this));
   },
 
   sendAvailableSpaces: function() {
-    socket.emit('spaces', gameProperties.spaces);
+    pongSocket.emit('spaces', gameProperties.spaces);
   },
 
   addPlayer: function(data) {
@@ -217,11 +217,11 @@ mainState.prototype = {
     this.resetScores();
     this.enablePaddles(false);
     this.enableBoundaires(true);
-    game.input.onDown.add(this.startGame, this);
+    // game.input.onDown.add(this.startGame, this);
   },
 
   startGame: function() {
-    game.input.onDown.remove(this.startGame, this);
+    // game.input.onDown.remove(this.startGame, this);
     this.enablePaddles(true);
     this.resetPaddles();
     this.enableBoundaires(false);
@@ -358,13 +358,13 @@ mainState.prototype = {
   },
 
   broadcastScore: function() {
-    socket.emit('score', {
+    pongSocket.emit('score', {
       score: (this.scoreLeft + ',' + this.scoreRight)
     });
   },
 
   broadcastGameOver: function(winner) {
-    socket.emit('winner', winner);
+    pongSocket.emit('winner', winner);
   },
 
   resetScores: function() {
@@ -429,7 +429,7 @@ mainState.prototype = {
   },
 };
 
-createGame = function(gameDiv) {
+createPongGame = function(gameDiv) {
   game = new Phaser.Game(gameProperties.screenWidth, gameProperties.screenHeight, Phaser.AUTO, gameDiv, null, false, false);
   game.state.add('main', mainState);
   game.state.start('main');

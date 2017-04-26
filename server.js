@@ -9,57 +9,68 @@ server.listen(8000, '0.0.0.0', function() {
   console.log('listening on *:8000');
 });
 
-var pong =  io.of('/pong');
-  pong.on('connection', function(socket) {
+var pong = io.of('/pong');
+pong.on('connection', function(pongSocket) {
 
-  console.log('a user connected ' + socket.id);
+  console.log('a user connected ' + pongSocket.id);
 
-  socket.on('disconnect', function() {
-    console.log('user disconnected' + socket.id);
-    id = (socket.id).slice(6);
+  pongSocket.on('disconnect', function() {
+    console.log('user disconnected' + pongSocket.id);
+    id = (pongSocket.id).slice(6);
     pong.emit('disconnect', id);
   });
 
-  socket.on('join', function(data) {
+  pongSocket.on('join', function(data) {
     pong.emit('join', data)
   });
 
-  socket.on('check', function(data) {
+  pongSocket.on('check', function(data) {
     pong.emit('check', data)
   });
 
-  socket.on('spaces', function(data) {
+  pongSocket.on('spaces', function(data) {
     pong.emit('spaces', data)
   });
 
-  socket.on('available', function(msg) {
+  pongSocket.on('available', function(msg) {
     pong.emit('available', msg);
   });
 
-  socket.on('Lcontrol message', function(msg) {
+  pongSocket.on('Lcontrol message', function(msg) {
     pong.emit('Lcontrol message', msg);
   });
 
-  socket.on('Rcontrol message', function(msg) {
+  pongSocket.on('Rcontrol message', function(msg) {
     pong.emit('Rcontrol message', msg);
   });
 
-  socket.on('score', function(msg) {
+  pongSocket.on('score', function(msg) {
     pong.emit('score', msg);
   });
 
-  socket.on('winner', function(msg) {
+  pongSocket.on('winner', function(msg) {
     pong.emit('winner', msg);
   });
 
-  socket.on('newGame', function(msg) {
+  pongSocket.on('newGame', function(msg) {
     pong.emit('newGame', msg);
   });
 
 });
 
 var cube = io.of('/cube');
+cube.on('connection', function(cubeSocket) {
 
-cube.on('connection', function(socket) {
+    console.log('a CUBE user connected ' + cubeSocket.id);
 
+    cubeSocket.on('message', function(data) {
+      cube.emit('message', data);
+    });
+    //
+    // cubeSocket.on('disconnect', function() {
+    //   console.log('CUBE user disconnected' + cubeSocket.id);
+    //   // cube.emit('disconnect', id);
+    // });
+
+  // });
 });

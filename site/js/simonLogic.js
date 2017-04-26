@@ -31,10 +31,10 @@ var displayMoves = function(array) {
 };
 
 var getSimonPic = function(indexString){
-  var pics = ["<img class='face' src='/static/cube/img/simon/up.png'/>",
-              "<img class='face' src='/static/cube/img/simon/left.png'/>",
-              "<img class='face' src='/static/cube/img/simon/right.png'/>",
-              "<img class='face' src='/static/cube/img/simon/down.png'/>"];
+  var pics = ["<img class='face' src='img/simon/up.png'/>",
+              "<img class='face' src='img/simon/left.png'/>",
+              "<img class='face' src='img/simon/right.png'/>",
+              "<img class='face' src='img/simon/down.png'/>"];
   return pics[parseInt(indexString)];
 }
 
