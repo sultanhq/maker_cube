@@ -1,4 +1,4 @@
-var pong = io('/pong');
+var socket = io('/pong');
 
 var gameProperties = {
   players: [{
@@ -130,37 +130,37 @@ mainState.prototype = {
   },
 
   createSocketListeners: function() {
-    pong.on('Lcontrol message', function(data) {
+    socket.on('Lcontrol message', function(data) {
       if (data.id === gameProperties.players[0].id) {
         this.playerMoveLeftPaddle(data.direction);
       }
     }.bind(this));
 
-    pong.on('Rcontrol message', function(data) {
+    socket.on('Rcontrol message', function(data) {
       if (data.id === gameProperties.players[1].id) {
         this.playerMoveRightPaddle(data.direction);
       }
     }.bind(this));
 
-    pong.on('check', function() {
+    socket.on('check', function() {
       this.sendAvailableSpaces();
     }.bind(this));
 
-    pong.on('join', function(data) {
+    socket.on('join', function(data) {
       this.addPlayer(data);
     }.bind(this));
 
-    pong.on('disconnect', function(id) {
+    socket.on('disconnect', function(id) {
       this.removePlayer(id);
     }.bind(this));
 
-    pong.on('newGame', function() {
+    socket.on('newGame', function() {
       this.startGame();
     }.bind(this));
   },
 
   sendAvailableSpaces: function() {
-    pong.emit('spaces', gameProperties.spaces);
+    socket.emit('spaces', gameProperties.spaces);
   },
 
   addPlayer: function(data) {
@@ -358,13 +358,13 @@ mainState.prototype = {
   },
 
   broadcastScore: function() {
-    pong.emit('score', {
+    socket.emit('score', {
       score: (this.scoreLeft + ',' + this.scoreRight)
     });
   },
 
   broadcastGameOver: function(winner) {
-    pong.emit('winner', winner);
+    socket.emit('winner', winner);
   },
 
   resetScores: function() {
