@@ -15,7 +15,7 @@ var gameWinner;
 
 var ready = false;
 
-var socket = io();
+var socket = io('/pong');
 
 var fontAssets = {
 
