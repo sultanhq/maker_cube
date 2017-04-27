@@ -12,10 +12,10 @@ server.listen(8000, '0.0.0.0', function() {
 var pong = io.of('/pong');
 pong.on('connection', function(pongSocket) {
 
-  console.log('a user connected ' + pongSocket.id);
+  console.log('a Pong user connected ' + pongSocket.id);
 
   pongSocket.on('disconnect', function() {
-    console.log('user disconnected' + pongSocket.id);
+    console.log('Pong user disconnected ' + pongSocket.id);
     id = (pongSocket.id).slice(6);
     pong.emit('disconnect', id);
   });
@@ -61,16 +61,10 @@ pong.on('connection', function(pongSocket) {
 var cube = io.of('/cube');
 cube.on('connection', function(cubeSocket) {
 
-    console.log('a CUBE user connected ' + cubeSocket.id);
+  console.log('a CUBE user connected ' + cubeSocket.id);
 
-    cubeSocket.on('message', function(data) {
-      cube.emit('message', data);
-    });
-    //
-    // cubeSocket.on('disconnect', function() {
-    //   console.log('CUBE user disconnected' + cubeSocket.id);
-    //   // cube.emit('disconnect', id);
-    // });
+  cubeSocket.on('message', function(data) {
+    cube.emit('message', data);
+  });
 
-  // });
 });

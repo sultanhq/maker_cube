@@ -1,6 +1,6 @@
-var socket = io('/cube');
+var cubeSocket = io('/cube');
 
-socket.on('message', function(data) {
+cubeSocket.on('message', function(data) {
 
   var message = data.split(' ');
 

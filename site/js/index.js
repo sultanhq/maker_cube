@@ -8,7 +8,7 @@ window.onload = function() {
 
   document.getElementById('run-text-submit').addEventListener('click', function(clickEvent) {
     clickEvent.preventDefault();
-    socket.emit('message', document.getElementById('run-text').value);
+    cubeSocket.emit('message', document.getElementById('run-text').value);
     document.getElementById('run-text').value = '';
   });
 
