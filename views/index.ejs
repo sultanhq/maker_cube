@@ -34,7 +34,13 @@
             <!--
     -->
             <div class="marquee" id="1-4">
-                <p>{{ip}}</p>
+                <p>
+                  <% if (ip === '127.0.0.1') { %>
+                      No Connection
+                    <% } else { %>
+                    <%= ip + ':8000' %>
+                    <% } %>
+                  </p>
             </div>
             <!--
     -->

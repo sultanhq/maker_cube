@@ -1,12 +1,24 @@
 var express = require('express'),
   app = express(app),
   server = require('http').createServer(app),
-  io = require('socket.io')(server);
+  io = require('socket.io')(server),
+  ip = require('ip'),
+  currentIp = ip.address();
 
-app.use(express.static('site'));
+app.set('view engine', 'ejs');
+
+app.use(express.static('views'));
+
+app.get('/index.html', function(req, res) {
+    res.render('index.ejs', {ip: currentIp});
+});
+
+app.get('/', function(req, res) {
+    res.render('index.ejs', {ip: currentIp});
+});
 
 server.listen(8000, '0.0.0.0', function() {
-  console.log('listening on *:8000');
+  console.log('listening on *:8000 & ' + currentIp);
 });
 
 var pong = io.of('/pong');
@@ -60,6 +72,8 @@ pong.on('connection', function(pongSocket) {
 
 var cube = io.of('/cube');
 cube.on('connection', function(cubeSocket) {
+
+
 
   console.log('a CUBE user connected ' + cubeSocket.id);
 
