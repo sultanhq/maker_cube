@@ -3,20 +3,17 @@ window.onload = function() {
   document.getElementById('dropdown').addEventListener('change', function(){
     var message = document.getElementById('dropdown').value;
     message += getCheckboxValues();
-    socket.emit('message', message);
-    socket.emit('message', message);
+    cubeSocket.emit('message', message);
   });
 
   document.getElementById('update_panels').addEventListener('click', function(){
     var message = document.getElementById('dropdown').value;
     message += getCheckboxValues();
-    socket.emit('message', message);
-    socket.emit('message', message);
+    cubeSocket.emit('message', message);
   });
 
   document.getElementById('run-text-submit').addEventListener('click', function(clickEvent) {
-    socket.emit('message', document.getElementById('run-text').value);
-    socket.emit('message', document.getElementById('run-text').value);
+    cubeSocket.emit('message', document.getElementById('run-text').value);
     document.getElementById('run-text').value = '';
     click.preventDefault();
   });
@@ -37,8 +34,7 @@ window.onload = function() {
 
   document.getElementById('reaction-button').addEventListener('click', function(e) {
     var time = 2000 + Math.random() * 4000;
-    socket.emit('message', '\\react ' + time);
-    socket.emit('message', '\\react ' + time);
+    cubeSocket.emit('message', '\\react ' + time);
   });
 
   document.getElementById('simon-button').addEventListener('click', function(){
@@ -71,7 +67,7 @@ var beginSimonSays = function() {
   hidePlaySimon();
   var difficulty = document.getElementById('simon-difficulty').innerHTML;
   incrementSimonDifficulty();
-  socket.emit('message', '\\play-simon ' + difficulty);
+  cubeSocket.emit('message', '\\play-simon ' + difficulty);
 }
 
 var sendSimon = function(){
@@ -79,5 +75,5 @@ var sendSimon = function(){
   showPlaySimon();
   var moves = document.getElementById('simon-moves').innerHTML.split('');
   document.getElementById('simon-moves').innerHTML = '';
-  socket.emit('message', '\\simon-says '+ getName('simon') + ' ' + moves.join(' '));
+  cubeSocket.emit('message', '\\simon-says '+ getName('simon') + ' ' + moves.join(' '));
 }
