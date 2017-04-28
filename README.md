@@ -1,7 +1,7 @@
 
 [![Stories in Ready](https://badge.waffle.io/sultanhq/maker_cube.svg?label=ready&title=Ready)](http://waffle.io/sultanhq/maker_cube)
 
-# The Cube: An interactive hardware project by Rob Adams, George Seeger and Simon Conway
+# The Cube: An interactive hardware project by Rob Adams, George Seeger and Simon Conway
 
 [Product](#product) | [Technologies](#technologies) | [Hardware](#hardware) | [Assembly](#assembly) | [Software configuration](#software-configuration) | [Using the mobile web app](#using-the-mobile-web-app) | [Sources](#sources) |
 
@@ -169,7 +169,7 @@ Finally run npm install to install all the relevant node modules.
 $ npm install
 ```
 
-## LED Panels
+## LED Panels
 
 Compile the led library executables
 
