@@ -187,7 +187,7 @@ Setup chromium browser to autostart by copying the `autoChromium.desktop` file i
 
 ## rc.local file
 
-To get the Django webserver to run on start up along with the led matrix output, amend the following lines to ~/etc/rc.local (note the ***'&'***'s are important otherwise the Pi will lock up on boot) and make sure that is all before the `exit 0`
+To get the NodeJs webserver to run on start up along with the led matrix output, amend the following lines to ~/etc/rc.local (note the ***'&'***'s are important otherwise the Pi will lock up on boot) and make sure that is all before the `exit 0`
 
 ```
 (sleep 5; cd /home/pi/maker_cube/; su pi -c 'node /home/pi/maker_cube/server.js < /dev/null &')&
@@ -242,7 +242,7 @@ Play alone or with friends. Be careful, the pattern length increases by one afte
 
 # sources:
 
-http://raspberrypituts.com/raspberry-pi-django-tutorial-2017/
+http://weworkweplay.com/play/raspberry-pi-nodejs/
 
 http://raspberrypi.stackexchange.com/questions/38515/auto-start-chromium-on-raspbian-jessie-11-2015
 
