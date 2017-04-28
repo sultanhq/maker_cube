@@ -17,7 +17,7 @@ app.get('/', function(req, res) {
     res.render('index.ejs', {ip: currentIp});
 });
 
-server.listen(8000, '0.0.0.0', function() {
+server.listen(8080, '0.0.0.0', function() {
   console.log('listening on *:8000 & ' + currentIp);
 });
 
