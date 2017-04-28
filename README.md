@@ -3,6 +3,7 @@
 
 # The Cube: An interactive hardware project by Rob Adams, George Seeger and Simon Conway
 
+
 [Product](#product) | [Technologies](#technologies) | [Hardware](#hardware) | [Assembly](#assembly) | [Software configuration](#software-configuration) | [Using the mobile web app](#using-the-mobile-web-app) | [Sources](#sources) |
 
 ![The Cube](./readme/the_cube.png)
@@ -170,6 +171,7 @@ $ npm install
 ```
 
 ## LED Panels
+
 
 Compile the led library executables
 
