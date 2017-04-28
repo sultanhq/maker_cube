@@ -159,10 +159,12 @@ If there has been a change to the submodules you can pull all the updated module
 Install Node by running:
 ```
 $ wget http://node-arm.herokuapp.com/node_latest_armhf.deb
-$ sudo dpkg -i node_latest_armhf.deb```
+$ sudo dpkg -i node_latest_armhf.deb
+```
 
 
 Finally run npm install to install all the relevant node modules.
+
 ```
 $ npm install
 ```
