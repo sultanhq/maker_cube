@@ -18,7 +18,7 @@ app.get('/', function(req, res) {
 });
 
 server.listen(8080, '0.0.0.0', function() {
-  console.log('listening on *:8000 & ' + currentIp);
+  console.log('listening on *:8080 & ' + currentIp);
 });
 
 var pong = io.of('/pong');
