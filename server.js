@@ -3,22 +3,23 @@ var express = require('express'),
   server = require('http').createServer(app),
   io = require('socket.io')(server),
   ip = require('ip'),
-  currentIp = ip.address();
+  currentIp = ip.address(),
+  serverPort = 8080;
 
 app.set('view engine', 'ejs');
 
 app.use(express.static('views'));
 
 app.get('/index.html', function(req, res) {
-    res.render('index.ejs', {ip: currentIp});
+    res.render('index.ejs', {ip: currentIp, port: serverPort});
 });
 
 app.get('/', function(req, res) {
     res.render('index.ejs', {ip: currentIp});
 });
 
-server.listen(8080, '0.0.0.0', function() {
-  console.log('listening on *:8080 & ' + currentIp);
+server.listen(serverPort, '0.0.0.0', function() {
+  console.log('listening on *:' + serverPort + ' & ' + currentIp);
 });
 
 var pong = io.of('/pong');
