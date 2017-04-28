@@ -27,16 +27,16 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 An interactive 6 sided battery powered LED cube
 Powered by a raspberry pi miniature computer
-Built on the Django web framework
-Languages and technologies used: Python, HTML, CSS, JavaScript, Linux, Django channels (WebSockets)
+Built on the NodeJS web framework
+Languages and technologies used: NodeJS, SocketIO, HTML, CSS, JavaScript, PhazerJS, Linux.
 
 ## Features:
 
-#### MVP:
+#### MVP 1:
 * Display images
 * Mood light
 
-#### MVP 2:
+#### MVP 2:
 * Displaying the time
 * "Panels" can be customised by app/webpage to choose what panels are shown and what is shown on them
 
@@ -54,12 +54,12 @@ Languages and technologies used: Python, HTML, CSS, JavaScript, Linux, Django ch
 
 ## Technologies:
 * Linux
+* NodeJS
 * Javascript
 * HTML5
 * CSS
-* Python
-* Django
-* WebSockets
+* PhaserJS
+* SocketIO
 * Slack api
 * OpenWeather api
 
@@ -70,7 +70,7 @@ Languages and technologies used: Python, HTML, CSS, JavaScript, Linux, Django ch
   * 6 x 32x32 RGB LED Panels
   * 30cm of 16way IDC ribbon cable
   * 1 x 5v 30amp step-down convertor
-  * 1 x 4s LiPo Battery (capacity is dependant on runtime required)
+  * 1 x 4s LiPo Battery (capacity is dependent on runtime required)
     * Optional 1x 5v 30a mains power supply
   * Mechano style right angle brackets to hold panels together
   * Mechano style strips to mount raspberry pi and battery to.
@@ -154,41 +154,17 @@ If there has been a change to the submodules you can pull all the updated module
 `$ git submodule update --recursive`
 
 
-## Python
+## Node
 
-Python comes pre-installed with Noobs, and for this project, we are using Python 2.7, so only the other dependancies need to be installed.
+Install Node by running:
+```
+$ wget http://node-arm.herokuapp.com/node_latest_armhf.deb
+$ sudo dpkg -i node_latest_armhf.deb```
 
-Install Python PIP
-```
-$ sudo apt-get install python-pip
-```
-Install and setup virtualenv
-```
-$ sudo pip install virtualenv
 
-$ mkdir -p ~/maker_cube/django-rpi
-$ cd ~/maker_cube/django-rpi/
-
-$ virtualenv venv && source venv/bin/activate
+Finally run npm install to install all the relevant node modules.
 ```
-
-Install Python dev tools
-```
-$ apt-get install python-dev
-```
-Install Django and dependancies
-```
-$ pip install Django
-$ pip install channels
-```
-Initialise Django
-```
-$ django-admin startproject maker_cube_app
-```
-
-Finally run a Python migrate to complete the Django setup.
-```
-$ python manage.py migrate
+$ npm install
 ```
 
 ## LED Panels
@@ -210,7 +186,7 @@ Setup chromium browser to autostart by copying the `autoChromium.desktop` file i
 To get the Django webserver to run on start up along with the led matrix output, amend the following lines to ~/etc/rc.local (note the ***'&'***'s are important otherwise the Pi will lock up on boot) and make sure that is all before the `exit 0`
 
 ```
-(sleep 15; cd /home/pi/maker_cube/django-rpi/maker_cube_app; /home/pi/maker_cube/django-rpi/venv/python /home/pi/maker_cube/django-rpi/maker_cube_app/manage.py runserver 0.0.0.0:8080)&
+(sleep 5; cd /home/pi/maker_cube/; su pi -c 'node /home/pi/maker_cube/server.js < /dev/null &')&
 (sleep 45; cd /home/pi/maker_cube/rpi-fb-matrix; sudo ./rpi-fb-matrix/matrix.cfg)&
 ```
 
