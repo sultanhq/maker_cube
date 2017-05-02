@@ -15,7 +15,7 @@ app.get('/index.html', function(req, res) {
 });
 
 app.get('/', function(req, res) {
-    res.render('index.ejs', {ip: currentIp});
+    res.render('index.ejs', {ip: currentIp, port: serverPort});
 });
 
 server.listen(serverPort, '0.0.0.0', function() {
