@@ -11,11 +11,17 @@ app.set('view engine', 'ejs');
 app.use(express.static('views'));
 
 app.get('/index.html', function(req, res) {
-    res.render('index.ejs', {ip: currentIp, port: serverPort});
+  res.render('index.ejs', {
+    ip: currentIp,
+    port: serverPort
+  });
 });
 
 app.get('/', function(req, res) {
-    res.render('index.ejs', {ip: currentIp, port: serverPort});
+  res.render('index.ejs', {
+    ip: currentIp,
+    port: serverPort
+  });
 });
 
 server.listen(serverPort, '0.0.0.0', function() {
@@ -74,12 +80,15 @@ pong.on('connection', function(pongSocket) {
 var cube = io.of('/cube');
 cube.on('connection', function(cubeSocket) {
 
-
-
   console.log('a CUBE user connected ' + cubeSocket.id);
 
   cubeSocket.on('message', function(data) {
     cube.emit('message', data);
+  });
+
+  cubeSocket.on('shutdown', function() {
+    console.log('shutdown call recived');
+    require('child_process').exec('sudo shutdown now');
   });
 
 });

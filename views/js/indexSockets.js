@@ -35,12 +35,13 @@ cubeSocket.on('message', function(data) {
     showRoi(message.slice(1));
   } else if (message[0] === '\\pong') {
     playPong(message.slice(1));
+  } else if (message[0] === '\\shutdown') {
+    cubeSocket.emit('shutdown');
   } else {
     disableReactButton();
     scrollingText(data);
   }
 });
-
 
 var playReact = function(time) {
   addDivs();
