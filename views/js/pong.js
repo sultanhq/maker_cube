@@ -236,11 +236,9 @@ mainState.prototype = {
     this.resetScores();
     this.enablePaddles(false);
     this.enableBoundaires(true);
-    // game.input.onDown.add(this.startGame, this);
   },
 
   startGame: function() {
-    // game.input.onDown.remove(this.startGame, this);
     this.enablePaddles(true);
     this.resetPaddles();
     this.enableBoundaires(false);
@@ -252,7 +250,6 @@ mainState.prototype = {
     game.time.events.add(Phaser.Timer.SECOND * gameProperties.ballStartDelay, this.startBall, this);
     this.ballSprite.reset(game.world.centerX, game.rnd.between(0, gameProperties.screenHeight));
     this.ballSprite.visible = false;
-    // this.ballSprite.height = 2;
   },
 
   enablePaddles: function(enabled) {
