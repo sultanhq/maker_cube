@@ -88,9 +88,7 @@ cube.on('connection', function(cubeSocket) {
 
   cubeSocket.on('shutdown', function() {
     console.log('shutdown call recived');
-    require('child_process').exec('su pi -c shutdown now', function(msg) {
-      console.log(msg)
-    });
+    require('child_process').exec('sudo shutdown now');
   });
 
 });
