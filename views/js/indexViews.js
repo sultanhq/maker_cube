@@ -1,4 +1,7 @@
 var addDivs = function() {
+  if (typeof game != 'undefined') {
+    game.state.game.destroy();
+  }
   if (document.getElementById('1')) {} else {
     var divs = "<div id='4'></div><div id='3'></div><div id='2'></div><div id='1'></div>";
     document.getElementById('1-4').innerHTML = divs;
