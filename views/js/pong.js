@@ -97,6 +97,8 @@ mainState.prototype = {
   },
 
   create: function() {
+    pongSocket.connect();
+
     this.initGraphics();
     this.initPhysics();
     this.createSocketListeners();
@@ -106,6 +108,14 @@ mainState.prototype = {
   update: function() {
     this.moveAiPaddles();
     game.physics.arcade.overlap(this.ballSprite, this.paddleGroup, this.collideWithPaddle, null, this);
+  },
+
+  shutdown: function() {
+    this.deletePlayerFromArray(0);
+    this.deletePlayerFromArray(1);
+    gameProperties.spaces = ['L', 'R'];
+    this.removeSocketListeners();
+    pongSocket.close();
   },
 
   initPhysics: function() {
@@ -159,6 +169,15 @@ mainState.prototype = {
     }.bind(this));
   },
 
+  removeSocketListeners: function() {
+    pongSocket.off('Lcontrol message');
+    pongSocket.off('Rcontrol message');
+    pongSocket.off('check');
+    pongSocket.off('join');
+    pongSocket.off('disconnect');
+    pongSocket.off('newGame');
+  },
+
   sendAvailableSpaces: function() {
     pongSocket.emit('spaces', gameProperties.spaces);
   },
@@ -190,18 +209,18 @@ mainState.prototype = {
       return e.id;
     }).indexOf(id);
 
-
     if (pos > -1) {
-      this.returnAi(gameProperties.players[pos]);
-      gameProperties.spaces[pos] = gameProperties.players[pos].side;
-      gameProperties.players[pos] = {
-        id: '',
-        side: '',
-      };
+      this.deletePlayerFromArray(pos)
     }
-    if (gameProperties.paddleLeftAi && gameProperties.paddleRightAi) {
-      // this.startDemo();
-    }
+  },
+
+  deletePlayerFromArray: function(pos) {
+    this.returnAi(gameProperties.players[pos]);
+    gameProperties.spaces[pos] = gameProperties.players[pos].side;
+    gameProperties.players[pos] = {
+      id: '',
+      side: '',
+    };
   },
 
   returnAi: function(player) {
