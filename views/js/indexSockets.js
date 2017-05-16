@@ -4,43 +4,61 @@ cubeSocket.on('message', function(data) {
 
   var message = data.split(' ');
 
-  if (message[0] === '\\pics') {
-    resetToGifs(message.slice(1));
-  } else if (message[0] === '\\react') {
-    var time = parseInt(message[1]);
-    playReact(time);
-  } else if (message[0] === '\\clock') {
-    showClock(message.slice(1));
-  } else if (message[0] === '\\borg') {
-    borgify(message.slice(1));
-  } else if (message[0] === '\\play-simon') {
-    playSimon(parseInt(message[1]));
-  } else if (message[0] === '\\simon-says') {
-    simonSays(message.slice(1));
-  } else if (message[0] === '\\borg-red') {
-    borgifyRed(message.slice(1));
-  } else if (message[0] === '\\hot-coals') {
-    hotCoals(message.slice(1));
-  } else if (message[0] === '\\water') {
-    water(message.slice(1));
-  } else if (message[0] === '\\fireworks') {
-    fireworks(message.slice(1));
-  } else if (message[0] === '\\slack') {
-    getSlackMessage();
-  } else if (message[0] === '\\off') {
-    off(message.slice(1));
-  } else if (message[0] === '\\weather') {
-    showWeather(message.slice(1));
-  } else if (message[0] === '\\roi') {
-    showRoi(message.slice(1));
-  } else if (message[0] === '\\pong') {
-    playPong(message.slice(1));
-  } else if (message[0] === '\\shutdown') {
-    cubeSocket.emit('shutdown');
-  } else {
-    disableReactButton();
-    scrollingText(data);
+  switch (message[0]) {
+    case ('\\pics'):
+      resetToGifs(message.slice(1));
+      break;
+    case ('\\react'):
+      var time = parseInt(message[1]);
+      playReact(time);
+      break;
+    case ('\\clock'):
+      showClock(message.slice(1));
+      break;
+    case ('\\borg'):
+      borgify(message.slice(1));
+      break;
+    case ('\\play-simon'):
+      playSimon(parseInt(message[1]));
+      break
+    case ('\\simon-says'):
+      simonSays(message.slice(1));
+      break;
+    case ('\\borg-red'):
+      borgifyRed(message.slice(1));
+      break;
+    case ('\\hot-coals'):
+      hotCoals(message.slice(1))
+      break;
+    case ('\\water'):
+      water(message.slice(1));
+      break;
+    case ('\\fireworks'):
+      fireworks(message.slice(1));
+      break;
+    case ('\\slack'):
+      getSlackMessage();
+      break;
+    case ('\\off'):
+      off(message.slice(1));
+      break;
+    case ('\\weather'):
+      showWeather(message.slice(1));
+      break;
+    case ('\\roi'):
+      showRoi(message.slice(1));
+      break;
+    case ('\\pong'):
+      playPong(message.slice(1));
+      break;
+    case ('\\shutdown'):
+      cubeSocket.emit('shutdown');
+      break;
+    default:
+      disableReactButton();
+      scrollingText(data);
   }
+
 });
 
 var playReact = function(time) {
