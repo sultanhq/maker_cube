@@ -8,7 +8,7 @@
 
 ![The Cube](./readme/the_cube.png)
 
-## The Cube is an art project to create a 6 sided LED cube which is a *interactive*, *decorative* and *customisable*.
+## The Cube is an art project to create a 6 sided LED cube which is *interactive*, *decorative* and *customisable*.
 
 
 #### The Makers Cube will provider users with:
